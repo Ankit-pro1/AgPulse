@@ -1,0 +1,407 @@
+/************************** Raleway Font Style *************************/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Raleway', 'sanserif';
+    font-weight: var(--f500);
+    overflow-x: hidden;
+}
+
+/************************** Colour Variables ***************************/
+:root{
+    --primary: #009245;
+    --secondary: #23272b;
+    --ternary: #F5F5F5;
+    --black: #000000;
+    --white: #ffffff; 
+    --f300: 300;
+    --f400: 400;
+    --f500: 500;
+    --f600: 600;
+    --f700: 700;
+}
+
+/************************** Utility Classes ***************************/
+ul{
+    list-style: none;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a,
+a:hover,
+a:focus,
+a:active{
+    font-family: 'Raleway', 'sans-serif';
+    text-decoration: none;
+}
+.nav-link,
+.nav-link:focus,
+.nav-link:active,
+.nav-link:hover{
+    color: var(--black);
+}
+.form-control:focus{
+    outline: none;
+}
+.custom-btn,
+.custom-btn:focus{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary);
+    color: white;
+    outline: none;
+}
+.blog-btn{
+    padding: 1px 8px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+}
+.margin{
+    margin: 50px 0;
+}
+.margin-top{
+    margin-top: 50px;
+}
+.padding{
+    padding: 40px 0;
+}
+.heading-title{
+    font-weight: var(--f600);
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.9;
+}
+/************************** Utility Classes End ***************************/
+/************************** Navigation Bar **************************/
+#navigation-bar{
+    background-color: var(--white);
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    margin-top: -35px;
+}
+#navigation-bar .navbar{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#navigation-bar .nav-link{
+    padding: 8px 14px;
+    font-size: 18px;
+}
+#navigation-bar .custom-login-btn{
+    background-color: var(--primary);
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 22px;
+    margin-left: 18px;
+    color: var(--white);
+}
+/************************** Navigation Bar End **************************/
+
+/************************** Hero Section **************************/
+#hero-section{
+    padding: 100px 0;
+    background-image: url('../images/bn3.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 35px;
+}
+#hero-section .hero-img{
+    margin-top: 64px;
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+#hero-section .hero-img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#hero-section .hero-content{
+    background-color: rgba(245, 245, 245, 0.9);
+    padding: 40px 0;
+    margin-bottom: 20px;
+    border-radius: 80px 0;
+    position: relative;
+}
+#hero-section .hero-content h1{
+    color: var(--primary);
+    font-weight: var(--f600);
+}
+#hero-section .hero-content p{
+    margin-top: 10px;
+    font-size: 18px;
+
+}
+#hero-form{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#hero-form .form-control{
+    padding: 20px 12px;
+}
+#hero-form div{
+    flex: 18%;
+    margin-right: 10px ;
+}  
+#form-disclaimer span{
+    color: var(--white);
+    background-color: var(--black);
+    padding: 2px 6px;
+}
+/************************** Hero Section End **************************/
+
+/************************** Coverage Section Start ********************/
+#coverage-section{
+    background: url('../images/worldmap.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#coverage-section .coverage-section-overlay{
+    background-color: rgb(0, 0, 0, 0.8);
+    padding-top: 20px;
+}
+#coverage-section .heading-title{
+    color: var(--white);
+}
+#coverage-section .coverage-section-items{
+    margin-top: 20px;
+}
+#coverage-section .item:nth-child(even) .item-inner{
+    margin-top: 180px;
+}
+#coverage-section .item .item-inner{
+    width: 100%;
+}
+
+#coverage-section .item .item-inner img{
+    width: 90%;
+    border-radius: 50%;
+    border: 6px solid var(--primary);
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in;
+}
+#coverage-section .item .item-inner img:hover{
+    transform: scale(1.1);
+}
+#coverage-section .item .item-inner-content{
+    text-align: center
+}
+#coverage-section .item .item-inner-content-toggle{
+    text-align: left;
+    margin-left: 36px;
+    display: none;
+}
+#coverage-section .item .item-inner-content p{
+    color: var(--white);
+    font-size: 22px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 0;
+}
+#coverage-section .item .item-inner-content li{
+    color: var(--white);
+}
+/************************** Coverage Section Ends ********************/
+
+/************************** Free Subscription Section *****************/
+.free-subscrition-section {
+    background-color: var(--primary);
+    color: var(--white);
+}
+.free-subscrition-section h3{
+    position: relative;
+}
+.free-subscrition-section h3::after{
+    position: absolute;
+    content: 'No Credit Card Required';
+    bottom: -60%;
+    left: 30%;
+    transform: translateX(-50%);
+    font-size: 16px; 
+    color: var(--ternary);  
+}
+.free-subscrition-section .custom-btn{
+    background-color: var(--white);
+    color: var(--primary);
+    padding: 10px 0;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+}
+.free-subscrition-section #myModal{
+    color: var(--black);
+}
+/************************** Free Subscription Section End *****************/
+
+/************************** Blog Section *************************/
+.blog-information > span:nth-child(1){
+    margin-right: 4px;
+}
+.blog-information > span i{
+    padding: 2px;
+    color: var(--primary);
+}
+.blog-information > span >span{
+    font-weight: 400;
+}
+.blog-content{
+    border: 1px solid var(--primary);
+    padding: 6px;
+    border-radius: 4px;
+    /* background-color: var(--ternary); */
+    transition: background 0.3s ease-in;
+}
+.blog-content:hover{
+    background-color: var(--ternary);
+}
+#blog-section .heading-title{
+    margin-bottom: 10px;
+}
+#blog-section .col-md-6 h2{
+    /* background-color: var(--primary); */
+    background-color: var(--secondary);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 2px 0;
+}
+
+#blog-section .container > .row{
+    margin-bottom: 30px;
+}
+/***************XX*********** Blog Section End *************XX************/
+
+
+/**************************** Service Section **************************/
+#services-section{
+    background-color: var(--ternary);
+}
+#services-section .services-heading{
+    color: var(--primary);
+    font-weight: var(--f600);
+}
+#services-section .services-content-inner li{
+    list-style: none;
+    padding: 2px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+#services-section .services-content-inner li i{
+    color: var(--primary);
+    padding-right: 10px;
+    font-size: 30px;
+}
+/***************XX************* Service Section End *************XX*************/
+
+/****************************** Twitter Section ***************************/
+#twitter-feed .twitter-content{
+    border: 1px solid black;
+    height: 200px;
+    margin-bottom: 20px;
+}
+/***************XX*************** Twitter Section End ***********XX****************/
+
+
+/**************************** Footer Section *****************************/
+.footer-read-more{
+    display: none;
+}
+.footer-read-more-btn{
+    padding: 2px;
+    cursor: pointer;
+    color: var(--primary);
+}
+#footer-section{
+    background-color: var(--secondary);
+    color: var(--white);
+    padding-top: 40px;
+}
+#footer-section .footer-content-heading{
+    position: relative;
+}
+#footer-section .footer-content-heading::after{
+    position: absolute;
+    content: '';
+    width: 42%;
+    height: 2px;
+    bottom: -5px;
+    left: 0%;
+    background-color: var(--primary);
+}
+#footer-section .footer-content-desc, #footer-section .footer-content ul{
+    font-weight: 100;
+}
+#footer-section .footer-content li a{
+    color: var(--white);
+    padding: 1px 0;
+    transition: all 0.3s ease-in;
+}
+#footer-section .footer-content a:hover{
+    color: var(--primary);
+}
+
+
+/****************XX************ Footer Section ***************XX**************/
+
+/****************************** Footer Footer Section ******************************/
+#footer-footer-section{
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 100;
+}
+/****************XX************** Footer Footer Section **************XX****************/
+
+/******************************** AgPulse Socials *************************************/
+#AgPulseSocials{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+#AgPulseSocials li a{
+    display: inline-block;
+    width: 60px;
+    padding: 6px 10px ;
+    transform: translateX(18px);
+    transition: transform 0.2s ease-in;
+}
+#AgPulseSocials li a.twitter{
+    background-color: #19b4f0;
+}
+#AgPulseSocials li a.linkedin{
+    background-color: #2683B1;
+}
+#AgPulseSocials li a.mail{
+    background-color: #d8584c;
+}
+#AgPulseSocials li a.whatsapp{
+    background-color: var(--primary);
+}
+#AgPulseSocials li a.phone{
+    background-color: #E9AE48;
+}
+#AgPulseSocials li a:hover{
+    transform: translateX(0);
+}
+#AgPulseSocials li a i{
+    font-size: 20px;
+    color: var(--white);
+}
+/*******************XX************* AgPulse Socials Ends ****************XX*********************/
+
+
+
