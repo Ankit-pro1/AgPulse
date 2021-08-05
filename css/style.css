@@ -6,6 +6,9 @@ body{
     font-weight: var(--f500);
     overflow-x: hidden;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 /************************** Colour Variables ***************************/
 :root{
@@ -29,6 +32,12 @@ ul{
 li{
     list-style: none;
 }
+input,
+input::active,
+input:focus{
+    box-shadow: none;
+    border: 1px solid var(--black);
+}
 a,
 a:hover,
 a:focus,
@@ -42,9 +51,7 @@ a:active{
 .nav-link:hover{
     color: var(--black);
 }
-.form-control:focus{
-    outline: none;
-}
+
 .custom-btn,
 .custom-btn:focus{
     width: 100%;
@@ -54,6 +61,7 @@ a:active{
     background-color: var(--primary);
     color: white;
     outline: none;
+    cursor: pointer;
 }
 .blog-btn{
     padding: 1px 8px;
@@ -70,7 +78,7 @@ a:active{
     margin-top: 50px;
 }
 .padding{
-    padding: 40px 0;
+    padding: 50px 0;
 }
 .heading-title{
     font-weight: var(--f600);
@@ -85,8 +93,10 @@ a:active{
     background-color: var(--white);
     z-index: 1;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin-top: -35px;
+    box-shadow: 0 9px 11px -9px #a8a9aa;
 }
 #navigation-bar .navbar{
     padding-top: 15px;
@@ -95,25 +105,40 @@ a:active{
 #navigation-bar .nav-link{
     padding: 8px 14px;
     font-size: 18px;
+    margin: 0 2px;
+    border-radius: 20px;
+    transition: all 0.2s ease-in;
+    color: var(--black);
+    cursor: pointer;
 }
-#navigation-bar .custom-login-btn{
+#navigation-bar .nav-link:hover{
+    color: var(--white);
+    background-color: var(--primary);
+}
+#navigation-bar .dropdown .dropdown-item:active,
+#navigation-bar .dropdown .dropdown-item:hover{
+    background-color: var(--primary);
+    color: var(--white);
+}
+#navigation-bar .custom-signin-btn{
     background-color: var(--primary);
     padding-left: 40px;
     padding-right: 40px;
     border-radius: 22px;
     margin-left: 18px;
     color: var(--white);
+    cursor: pointer;
 }
 /************************** Navigation Bar End **************************/
 
 /************************** Hero Section **************************/
 #hero-section{
-    padding: 100px 0;
+    padding: 80px 0;
     background-image: url('../images/bn3.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 35px;
+    margin-top: 70px;
 }
 #hero-section .hero-img{
     margin-top: 64px;
@@ -128,9 +153,9 @@ a:active{
 }
 #hero-section .hero-content{
     background-color: rgba(245, 245, 245, 0.9);
-    padding: 40px 0;
+    padding: 30px 0;
     margin-bottom: 20px;
-    border-radius: 80px 0;
+    /* border-radius: 80px 0; */
     position: relative;
 }
 #hero-section .hero-content h1{
@@ -155,6 +180,21 @@ a:active{
     flex: 18%;
     margin-right: 10px ;
 }  
+#hero-section #phoneNumber select{
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    border: none;
+}
+#hero-section #phoneNumber input{
+    border-radius: 0 4px 4px 0;
+}
+#hero-form .multiselect-native-select .btn-group{
+    width: 100%;    
+}
+#hero-form .multiselect-native-select .btn-group button{
+    height: 42px;
+}
+
 #form-disclaimer span{
     color: var(--white);
     background-color: var(--black);
