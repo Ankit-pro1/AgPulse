@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
     <!-- Bootstrap CSS (Version--4.5.3) -->
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 
     <!-- External main CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="./css/responsive.css">
+    <!--  pages CSS -->
+    <link rel="stylesheet" href="./pages.css">
 
     <!-- CSS Mutliselect Plugin -->
-    <link rel="stylesheet" href="./Mutliselect/bootstrap-multiselect.css">
+    <!-- <link rel="stylesheet" href="./Mutliselect/bootstrap-multiselect.css"> -->
 
 </head>
 
@@ -31,7 +31,7 @@
             <nav class="navbar navbar-expand-md">
                 <!-- Brand -->
                 <a class="navbar-brand" href="#">
-                    <img src="./logo/agpulse-black-logo.png" alt="" width="230px">
+                    <img src="../logo/agpulse-black-logo.png" alt="" width="230px">
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
@@ -43,22 +43,22 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="../index.php">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown">About us</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="./pages/whoweare.php">Who we are</a>
-                                <a class="dropdown-item" href="./pages/whatwedo.php">What we do</a>
-                                <a class="dropdown-item" href="./pages/ourteam.php">Our Team</a>
-                                <a class="dropdown-item" href="./pages/presentation.pdf">Presention</a>
+                                <a class="dropdown-item" href="whoweare.php">Who we are</a>
+                                <a class="dropdown-item" href="whatwedo.php">What we do</a>
+                                <a class="dropdown-item" href="ourteam.php">Our Team</a>
+                                <a class="dropdown-item" href="presentation.pdf">Presention</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#services-section">Services</a>
+                            <a class="nav-link" href="../#services-section">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#blog-section">Blogs</a>
+                            <a class="nav-link" href="../#blog-section.php">Blogs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link custom-signin-btn" data-toggle="modal" data-target="#signinModal">Sign In</a>

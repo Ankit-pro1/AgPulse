@@ -44,7 +44,7 @@
                                 <a href="">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="./pages/subscriber-agreement.php">Subscriber Agreement</a>
+                                <a href="">Subscription Agreement</a>
                             </li>
                             <li>
                                 <a href="">Terms of Use</a>
@@ -104,7 +104,10 @@
     <script src="./Mutliselect/bootstrap-multiselect.js"></script>
 
     <!------------- External Javascript --------------->
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!------------- Pages Javascript ----------------->
+    <script src="../pages/pages.js"></script>
 
 </body>
 
