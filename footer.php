@@ -6,7 +6,7 @@
                     <div class="footer-content">
                         <img src="./logo/agpulse-white-logo.png" alt="" width="230px" class="mb-2">
                         <div class="footer-content-desc">
-                            <h5 class="mt-2">Marketing Agency</h5>
+                            <p class="mt-2" style="font-size: 18px;"><em>Market data to market intelligence</em></p>
                             <!-- <p>AgPulse Analytica provides fundamental, technical and statistical analysis into global agriculture <span id="dots">...</span><span class="footer-read-more">markets to help stakeholders make informed investment and risk management decisions</span> <span class="footer-read-more-btn">read more</span></p> -->
                         </div>
                     </div>
@@ -16,19 +16,19 @@
                         <h5 class="footer-content-heading">Quick Links</h5>
                         <ul>
                             <li>
-                                <a href="">About Us</a>
+                                <a href="./pages/about-us-inner.php">About Us</a>
                             </li>
                             <li>
-                                <a href="">Blogs</a>
+                                <a href="#blog-section">Blogs</a>
                             </li>
                             <li>
-                                <a href="">Services</a>
+                                <a href="#services-section">Services</a>
                             </li>
                             <li>
-                                <a href="">Subscribe</a>
+                                <a href="./subscribe/subscribe.php">Subscribe</a>
                             </li>
                             <li>
-                                <a href="">FAQ</a>
+                                <a href="./pages/subcribe.php/#faq-section">FAQ</a>
                             </li>
                         </ul>
                     </div>
@@ -38,16 +38,16 @@
                         <h5 class="footer-content-heading">Our Policy</h5>
                         <ul>
                             <li>
-                                <a href="">Disclaimer</a>
+                                <a href="./pages/disclaimer.php">Disclaimer</a>
                             </li>
                             <li>
-                                <a href="">Privacy Policy</a>
+                                <a href="./pages/privacy-policy.php">Privacy Policy</a>
                             </li>
                             <li>
                                 <a href="./pages/subscriber-agreement.php">Subscriber Agreement</a>
                             </li>
                             <li>
-                                <a href="">Terms of Use</a>
+                                <a href="./pages/terms-of-use.php">Terms of Use</a>
                             </li>
                         </ul>
                     </div>
@@ -62,7 +62,7 @@
                             </li>
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>
-                                <a href="https://goo.gl/maps/vCtPxxaftuvAWY19A">B-7 Express Green Plaza Vaishali Sector 1, Ghaziabad, Uttar Pradesh, India - 201010</a>
+                                <a href="https://goo.gl/maps/vCtPxxaftuvAWY19A" target="_blank" >B-7 Express Green Plaza Vaishali Sector 1, Ghaziabad, Uttar Pradesh, India - 201010</a>
                             </li>
                         </ul>
                     </div>
@@ -76,7 +76,7 @@
     <div id="footer-footer-section">
         <div class="container">
             <div class="row justify-content-center p-2">
-                <p class="m-0">Copyright &copy; <span id="copyright-year"></span> <a href="index.php" class="text-white">AgPulse Analytica</a></p>
+                <p class="m-0">Copyright &copy; <span id="copyright-year"></span> <a href="#" class="text-white">AgPulse Analytica</a></p>
             </div>
         </div>
     </div>
@@ -85,11 +85,11 @@
     <!-------------------------------------- AgPulse Socials -------------------------------------------------->
     <div id="AgPulseSocials">
         <ul>
-            <li><a href="https://twitter.com/TraderGJ" class="twitter"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.linkedin.com/company/agpulse" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="mailto:gaurav@agpulse.net" class="mail"><i class="far fa-envelope"></i></a></li>
-            <li><a href="https://api.whatsapp.com/send?phone=%20+919368017351%20Chat%20with%20AgPulse%20Analytica" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
-            <li><a href="tel:++919368017351" class="phone"><i class="fas fa-phone"></i></a></li>
+            <li><a href="https://twitter.com/TraderGJ" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/agpulse" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="mailto:gaurav@agpulse.net" target="_blank" class="mail"><i class="far fa-envelope"></i></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=%20+971502418692%20Chat%20with%20AgPulse%20Analytica" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="tel:+919368017351" class="phone"><i class="fas fa-phone"></i></a></li>
         </ul>
     </div>
     <!-----------------------XX--------------- AgPulse Socials Ends -------------------XX------------------------->

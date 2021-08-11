@@ -1,10 +1,4 @@
 /**************** utility classes *****************/
-body{
-    /* background-color: gray; */
-}
-/* h1,h2,h3,h4,h5,h6,p{
-    margin-bottom: 0;
-} */
 .heading-title{
     position: relative;
     color: var(--primary);
@@ -22,7 +16,7 @@ body{
     /* background-color: var(--black); */
 }
 
-/************************ Our Team Section *************************/
+/************************ Team Page *************************/
 #ourteam,#whoweare,#whatwedo{
     margin-top: 130px;
 }
@@ -42,12 +36,96 @@ body{
     margin-top: 20px;
     margin-left: 50px;
 }
-/***************XX********* Our Team Section End ************XX*************/
+/***************XX********* Team Page Ends ************XX*************/
 
-
-/*********************************** Who We Are Section  ***************************/
+/***********************************************************************************/
+/**********************              About Us Inner Page                 ***********/
+/***********************************************************************************/
 #whoweare, #whatwedo{
     margin-bottom: 60px;
 }
 
-/*****************XX****************** Who We Are Section **************XX*************/
+/*****************XX****************** About Us Inner Page Ends **************XX*************/
+
+/************************************* Subscriber's Agreement Page **************************/
+#sub-agree{
+    margin-top: 72px;
+}
+#sub-agree .sub-heading-title{
+    background-color: var(--ternary);
+    padding: 40px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#sub-agree .sub-agree-content u{
+    font-weight: 700;
+    font-size: 20px;
+}
+/*****************XX******************** Subscriber's Agreement Page **********XX****************/
+
+/********************************************** Subscribe Page ***********************************/
+#subscribe{
+    margin-top: 72px;
+}
+#subscribe .sub-heading-title{
+    margin: 30px 0;
+    border-bottom: 3px solid var(--black);
+    font-size: 30px;
+}
+#subscribe .services-heading{
+    color: var(--primary);
+    font-weight: var(--f600);
+    font-size: 24px;
+}
+#subscribe .services-content-inner li{
+    list-style: none;
+    padding: 2px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+#subscribe .services-content-inner li i{
+    color: var(--primary);
+    padding-right: 10px;
+    font-size: 24px;
+}
+#subscribe .package .tabs{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--primary);
+    border-right: 1px solid  var(--primary);
+    border-left: 1px solid  var(--primary);
+}
+#subscribe .package .tablinks{
+    flex: 50%;
+    outline: none;
+    border: none;
+    padding: 10px 0;
+    font-size: 18px;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+#subscribe .package .tablinks:hover{
+    background-color: var(--primary);
+    color: var(--white);
+}
+#subscribe #India{
+    border-bottom: 1px solid  var(--primary);
+    border-right: 1px solid  var(--primary);
+    border-left: 1px solid  var(--primary);
+    padding-top: 26px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+#subscribe #India .form-check-input{
+    cursor: pointer;
+}
+#subscribe #India .form-check-input:focus
+,#subscribe #India .form-check-input:active{
+    /* color: var(--primary); */
+    background-color: var(--primary);
+}
+/**********************XX******************** Subscribe Page End ***************XX****************/

@@ -32,12 +32,7 @@ ul{
 li{
     list-style: none;
 }
-input,
-input::active,
-input:focus{
-    box-shadow: none;
-    border: 1px solid var(--black);
-}
+
 a,
 a:hover,
 a:focus,
@@ -51,7 +46,14 @@ a:active{
 .nav-link:hover{
     color: var(--black);
 }
-
+.form-control{
+    transition: border-color 0.3s ease-in;
+}
+.form-control:active,
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid var(--primary);
+}
 .custom-btn,
 .custom-btn:focus{
     width: 100%;
@@ -76,6 +78,9 @@ a:active{
 }
 .margin-top{
     margin-top: 50px;
+}
+.margin-bottom{
+    margin-bottom: 50px;
 }
 .padding{
     padding: 50px 0;
@@ -115,6 +120,9 @@ a:active{
     color: var(--white);
     background-color: var(--primary);
 }
+#navigation-bar .nav-item .dropdown:hover .dropdown-menu{
+    display: block;
+}
 #navigation-bar .dropdown .dropdown-item:active,
 #navigation-bar .dropdown .dropdown-item:hover{
     background-color: var(--primary);
@@ -129,12 +137,15 @@ a:active{
     color: var(--white);
     cursor: pointer;
 }
+#signupModal .multiselect-native-select .btn-group{
+    width: 100%;
+}
 /************************** Navigation Bar End **************************/
 
 /************************** Hero Section **************************/
 #hero-section{
     padding: 80px 0;
-    background-image: url('../images/bn3.jpg');
+    background-image: url('../images/bn1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -152,10 +163,9 @@ a:active{
     height: 100%;
 }
 #hero-section .hero-content{
-    background-color: rgba(245, 245, 245, 0.9);
+    background-color: rgb(245, 245, 245);
     padding: 30px 0;
     margin-bottom: 20px;
-    /* border-radius: 80px 0; */
     position: relative;
 }
 #hero-section .hero-content h1{
@@ -211,7 +221,7 @@ a:active{
     background-attachment: fixed;
 }
 #coverage-section .coverage-section-overlay{
-    background-color: rgb(0, 0, 0, 0.8);
+    background-color: rgb(0, 0, 0, 0.6);
     padding-top: 20px;
 }
 #coverage-section .heading-title{
@@ -225,6 +235,29 @@ a:active{
 }
 #coverage-section .item .item-inner{
     width: 100%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+#coverage-section .item .item-overlay-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding-top: 72px;
+    display: none;
+}
+
+#coverage-section .item .item-name>p{
+    color: var(--white);
+    font-size: 22px;
+    margin-top: 14px;
+    text-align: center;
 }
 
 #coverage-section .item .item-inner img{
@@ -237,23 +270,8 @@ a:active{
 #coverage-section .item .item-inner img:hover{
     transform: scale(1.1);
 }
-#coverage-section .item .item-inner-content{
-    text-align: center
-}
-#coverage-section .item .item-inner-content-toggle{
-    text-align: left;
-    margin-left: 36px;
-    display: none;
-}
-#coverage-section .item .item-inner-content p{
-    color: var(--white);
-    font-size: 22px;
-    cursor: pointer;
-    padding: 10px;
-    margin-bottom: 0;
-}
-#coverage-section .item .item-inner-content li{
-    color: var(--white);
+#coverage-section .item .item-inner img:hover .item-overlay-content{
+    display: block;
 }
 /************************** Coverage Section Ends ********************/
 
@@ -285,27 +303,31 @@ a:active{
 .free-subscrition-section #myModal{
     color: var(--black);
 }
+
+.free-subscrition-section .multiselect-native-select .btn-group{
+    width: 100%;
+}
 /************************** Free Subscription Section End *****************/
 
 /************************** Blog Section *************************/
-.blog-information > span:nth-child(1){
+#blog-section .blog-information > span:nth-child(1){
     margin-right: 4px;
 }
-.blog-information > span i{
+#blog-section .blog-information > span i{
     padding: 2px;
     color: var(--primary);
 }
-.blog-information > span >span{
+#blog-section .blog-information > span >span{
     font-weight: 400;
 }
-.blog-content{
+#blog-section .blog-content{
     border: 1px solid var(--primary);
     padding: 6px;
     border-radius: 4px;
     /* background-color: var(--ternary); */
     transition: background 0.3s ease-in;
 }
-.blog-content:hover{
+#blog-section .blog-content:hover{
     background-color: var(--ternary);
 }
 #blog-section .heading-title{
@@ -444,4 +466,61 @@ a:active{
 /*******************XX************* AgPulse Socials Ends ****************XX*********************/
 
 
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX BLOGS CSS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+#blog-page{
+    margin-top: 72px;
+    padding-bottom: 80px;
+    background-color: var(--ternary);
+}
 
+#blog-page .heading-title{
+    padding: 40px 0;
+    background-color: var(--primary);
+    color: var(--white);
+}
+#blog-page .blog-container .blog-heading{
+    color: var(--primary);
+}
+#blog-page .blog-information > span:nth-child(1){
+    margin-right: 4px;
+}
+#blog-page .blog-information > span i{
+    padding: 2px;
+    color: var(--primary);
+}
+#blog-page .blog-information > span >span{
+    font-weight: 400;
+}
+#blog-page .blog-container{
+    background-color: var(--white);
+    padding: 20px;
+}
+#blog-page .blog-content .blog-container p{
+    margin-top: 6px;   
+}
+#blog-page hr{
+    margin-bottom: 20px;
+}
+
+#blog-sidebar .search-post-container, #blog-sidebar .recent-post-container{
+    background-color: var(--white);
+    padding: 20px;
+}
+#blog-sidebar .search-post-container .input-group-btn .btn{
+    border-radius: 0 4px 4px 0;
+}
+#blog-sidebar .recent-post-container{
+    height: 782px;
+    overflow-x: scroll;
+}
+#blog-sidebar h4{
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 5px;
+    border-left: 3px solid var(--primary);
+}
+#blog-sidebar .recent-post-container .blog-content > p{
+    font-size: 14px;
+} 

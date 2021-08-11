@@ -6,7 +6,7 @@ include_once "header.php";
 <div id="ourteam">
     <div class="container">
         <div class="row justify-content-center">
-            <h1 class="heading-title">Our Team</h1>
+            <h1 class="heading-title">Team</h1>
         </div>
 
         <!-- Member 1 -->
@@ -42,7 +42,7 @@ include_once "header.php";
                     <img src="./assets/teamimg/TapasyaJain.png" alt="DrTapasyaJain">
                     <div class="member-profile-content text-center">
                         <h3 class="member-profile-title mb-0">Dr. Tapasya Jain</h3>
-                        <p class="member-profile-position">Ex-Director</p>
+                        <p class="member-profile-position">Director</p>
                     </div>
                 </div>
             </div>
