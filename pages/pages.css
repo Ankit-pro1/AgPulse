@@ -67,6 +67,7 @@
 /********************************************** Subscribe Page ***********************************/
 #subscribe{
     margin-top: 72px;
+    margin-bottom: 100px;
 }
 #subscribe .sub-heading-title{
     margin: 30px 0;
@@ -97,6 +98,13 @@
     border-right: 1px solid  var(--primary);
     border-left: 1px solid  var(--primary);
 }
+#subscribe .package .tabs p{
+    font-size: 13px;
+    padding: 6px;
+    margin-bottom: 0;
+    background-color: var(--ternary);
+    margin-top: 10px;
+}
 #subscribe .package .tablinks{
     flex: 50%;
     outline: none;
@@ -108,24 +116,40 @@
     transition: all 0.3s ease-in;
 }
 #subscribe .package .tablinks:hover{
+    background-color: rgb(1, 168, 1);
+    color: var(--white);
+}
+#subscribe .package .tablinks.active{
     background-color: var(--primary);
     color: var(--white);
 }
-#subscribe #India{
+#subscribe .package .tabcontent{
+    display: none;
+}
+#subscribe #India, #subscribe #International{
     border-bottom: 1px solid  var(--primary);
     border-right: 1px solid  var(--primary);
     border-left: 1px solid  var(--primary);
     padding-top: 26px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
-#subscribe #India .form-check-input{
+#subscribe #India h4, #subscribe #International h4{
+    font-weight: 600;
+    margin-bottom: 14px;
+    font-size: 19px;
+}
+#subscribe #India .form-check-input, #subscribe #International .form-check-input{
     cursor: pointer;
 }
-#subscribe #India .form-check-input:focus
-,#subscribe #India .form-check-input:active{
-    /* color: var(--primary); */
-    background-color: var(--primary);
+#subscribe #India .col-md-2 span span, #subscribe #International .col-md-2 span span{
+    font-weight: 600;
 }
 /**********************XX******************** Subscribe Page End ***************XX****************/
+
+/******************************************** Payment Process Page***********************************/
+#payment-process{
+    margin-top: 120px;
+}
+/******************************************** Payment Process Page End ***********************************/
