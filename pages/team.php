@@ -12,7 +12,7 @@ include_once "header.php";
         <!-- Member 1 -->
         <div class="row member mb-4">
             <!-- Member Image -->
-            <div class="col-md-4 text-center">
+            <div class="col-lg-4 text-center">
                 <div class="member-profile">
                     <img src="./assets/teamimg/GauravJain.png" alt="GauravJain">
                     <div class="member-profile-content text-center">
@@ -22,7 +22,7 @@ include_once "header.php";
                 </div>
             </div>
             <!-- Member Content -->
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="member-text">
                     <h2 class="member-text-heading">Gaurav Jain</h2>
                     <div class="member-text-inner">
@@ -37,7 +37,7 @@ include_once "header.php";
         <!-- Member 2 -->
         <div class="row member mb-5">
              <!-- Member Image -->
-             <div class="col-md-4 text-center order-md-2">
+             <div class="col-lg-4 text-center order-lg-2">
                 <div class="member-profile">
                     <img src="./assets/teamimg/TapasyaJain.png" alt="DrTapasyaJain">
                     <div class="member-profile-content text-center">
@@ -47,7 +47,7 @@ include_once "header.php";
                 </div>
             </div>
              <!-- Member Content -->
-             <div class="col-md-8 order-md-1">
+             <div class="col-lg-8 order-lg-1">
                 <div class="member-text">
                     <h2 class="member-text-heading">Dr. Tapasya Jain​</h2>
                     <div class="member-text-inner">

@@ -1,0 +1,82 @@
+
+/********************************************************************/
+/**************************** LANDING PAGE **************************/
+/********************************************************************/
+
+@media screen and (min-width: 992px) {
+    
+}
+@media screen and (max-width: 578px) {
+    .padding{
+        padding: 30px 0;
+    }
+
+    /************* Hero Section **************/
+    #hero-section{
+        padding: 30px 0;
+    }
+    #hero-section .hero-content {
+        margin: 10px;
+        padding: 20px 20px;
+    }
+    #hero-section .hero-content h1{
+        font-size: 26px;
+    }
+    #hero-section .hero-content p{
+        font-size: 16px;
+    }
+    #hero-section div.col{
+        flex: 100%;
+        margin-bottom: 6px;
+    }
+
+    /***************** Coverage Section ***************/
+    #coverage-section .heading-title{
+        font-size: 26px;
+        margin: 10px 0;
+    }
+    #coverage-section .item .item-inner img{
+        width: 70%;
+    }
+    #coverage-section .item:nth-child(even) .item-inner{
+        margin-top: 0;
+    }
+    #coverage-section .item .item-name > p{
+        margin-bottom: 36px;
+        margin-top: 0;
+    }
+
+    /*************** Free Subscription *****************/
+    .free-subscrition-section h3{
+        font-size: 26px;
+        margin-bottom: 36px;
+    }
+    .free-subscrition-section .custom-btn{
+        margin: 0;
+        padding: 6px 0;
+    }
+
+
+    /**************** Blog Section *********************/
+    #blog-section .heading-title, #services-section .heading-title{
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+    #blog-section .blog-content:nth-child(odd){
+        margin-bottom: 10px;
+    }
+    #blog-section h2{
+        padding: 6px 0;
+        font-size: 24px;
+    }
+    #blog-section .blog-content .blog-heading{
+        font-size: 24px;
+    }
+    #services-section .services-heading{
+        font-size: 24px;
+    }
+
+    /**********************************************/
+    /*************** Our Team Page ****************/
+
+}

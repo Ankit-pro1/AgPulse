@@ -48,10 +48,13 @@
 /*****************XX****************** About Us Inner Page Ends **************XX*************/
 
 /************************************* Subscriber's Agreement Page **************************/
-#sub-agree{
+#sub-agree,#disclaimer, #terms-of-use, #privacy-policy{
     margin-top: 72px;
 }
-#sub-agree .sub-heading-title{
+#disclaimer{
+    height: 70vh;
+}
+#sub-agree .sub-heading-title, #disclaimer .sub-heading-title, #terms-of-use .sub-heading-title, #privacy-policy .sub-heading-title{
     background-color: var(--ternary);
     padding: 40px 0;
     display: block;
@@ -66,90 +69,128 @@
 
 /********************************************** Subscribe Page ***********************************/
 #subscribe{
-    margin-top: 72px;
-    margin-bottom: 100px;
-}
-#subscribe .sub-heading-title{
-    margin: 30px 0;
-    border-bottom: 3px solid var(--black);
-    font-size: 30px;
-}
-#subscribe .services-heading{
-    color: var(--primary);
-    font-weight: var(--f600);
-    font-size: 24px;
-}
-#subscribe .services-content-inner li{
-    list-style: none;
-    padding: 2px 0;
-    font-size: 16px;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-#subscribe .services-content-inner li i{
-    color: var(--primary);
-    padding-right: 10px;
-    font-size: 24px;
+#subscribe img{
+    width: 50px;
+    height: 50px;
+    margin-top: 6px;
+    display: block;
 }
-#subscribe .package .tabs{
-    display: flex;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--primary);
-    border-right: 1px solid  var(--primary);
-    border-left: 1px solid  var(--primary);
+#subscribe .international img{
+    -webkit-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
 }
-#subscribe .package .tabs p{
-    font-size: 13px;
-    padding: 6px;
-    margin-bottom: 0;
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#subscribe .button{
+    border: 2px solid var(--primary);
     background-color: var(--ternary);
-    margin-top: 10px;
-}
-#subscribe .package .tablinks{
-    flex: 50%;
-    outline: none;
-    border: none;
-    padding: 10px 0;
-    font-size: 18px;
-    color: var(--black);
-    cursor: pointer;
+    color: black;
+    padding: 20px 80px;
+    margin: 4px;
+    border-radius: 40px;
+    font-size: 20px;
+    cursor: pointer;    
     transition: all 0.3s ease-in;
 }
-#subscribe .package .tablinks:hover{
-    background-color: rgb(1, 168, 1);
-    color: var(--white);
+#subscribe .india, #subscribe .international{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
 }
-#subscribe .package .tablinks.active{
+#subscribe .button:hover{
     background-color: var(--primary);
     color: var(--white);
 }
-#subscribe .package .tabcontent{
-    display: none;
+/**********************XX******************** Subscribe Page End ***************XX****************/
+/******************************************** India Page ****************************************/
+#india-page{
+    margin-top: 100px;
 }
-#subscribe #India, #subscribe #International{
-    border-bottom: 1px solid  var(--primary);
-    border-right: 1px solid  var(--primary);
-    border-left: 1px solid  var(--primary);
-    padding-top: 26px;
-    padding-left: 10px;
+#india-page .sub-heading{
+    border-bottom: 2px solid var(--black);
+}
+#india-page.services-heading{
+    color: var(--primary);
+    font-weight: var(--f600);
+}
+#india-page .services-content-inner li{
+    list-style: none;
+    padding: 2px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+#india-page .services-content-inner li i{
+    color: var(--primary);
     padding-right: 10px;
-    padding-bottom: 20px;
+    font-size: 30px;
 }
-#subscribe #India h4, #subscribe #International h4{
+#india-page .form form{
+    width: 100%;
+}
+#india-page .form form p{
+    margin: 0;
+}
+#india-page .form .product-card{
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+}
+#india-page .product-card .card-heading{
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px 0;
+}
+#india-page .product-card .card-heading span{
+    font-size: 14px;
+}
+#india-page .yearly-price, #india-page .quaterly-price{
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 14px;
-    font-size: 19px;
+    /* color: var(--primary); */
+   
 }
-#subscribe #India .form-check-input, #subscribe #International .form-check-input{
+#india-page .quaterly,#india-page .yearly{
+    transition: all 0.3s ease-in;
     cursor: pointer;
 }
-#subscribe #India .col-md-2 span span, #subscribe #International .col-md-2 span span{
-    font-weight: 600;
+#india-page .quaterly:hover{
+    transform: scale(1.05);
 }
-/**********************XX******************** Subscribe Page End ***************XX****************/
+#india-page .yearly:hover{
+    transform: scale(1.05);
+}
+/***********************XX********************* India Page End ******************XX**********************/
 
-/******************************************** Payment Process Page***********************************/
-#payment-process{
-    margin-top: 120px;
+/********************************************** Payment India Page *******************************************/
+#paymentind{
+    margin-top: 100px;
 }
-/******************************************** Payment Process Page End ***********************************/
+#paymentind .payment-heading{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    display: inline-block;
+    border-bottom: 2px solid var(--black);
+}
+#paymentind form sup{
+    top: 6px;
+    font-size: 30px;
+    color: red;
+}
+/********************************************** Payment India Page End*******************************************/
+

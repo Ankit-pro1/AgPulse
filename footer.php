@@ -1,12 +1,12 @@
  <!-------------------------------------- Footer Section ----------------------------------------->
- <div id="footer-section">
+ <div id="footer-section"> 
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-content">
                         <img src="./logo/agpulse-white-logo.png" alt="" width="230px" class="mb-2">
-                        <div class="footer-content-desc">
-                            <p class="mt-2" style="font-size: 18px;"><em>Market data to market intelligence</em></p>
+                        <div class="footer-content-desc text-center">
+                            <p class="mt-2" style="font-size: 18px;">Market data to market intelligence</p>
                             <!-- <p>AgPulse Analytica provides fundamental, technical and statistical analysis into global agriculture <span id="dots">...</span><span class="footer-read-more">markets to help stakeholders make informed investment and risk management decisions</span> <span class="footer-read-more-btn">read more</span></p> -->
                         </div>
                     </div>
@@ -25,11 +25,11 @@
                                 <a href="#services-section">Services</a>
                             </li>
                             <li>
-                                <a href="./subscribe/subscribe.php">Subscribe</a>
+                                <a href="./pages/subscribe.php">Subscribe</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="./pages/subcribe.php/#faq-section">FAQ</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>

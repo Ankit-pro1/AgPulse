@@ -50,7 +50,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="about-us-inner.php">About us</a>
                                 <a class="dropdown-item" href="team.php">Team</a>
-                                <a class="dropdown-item" href="AgPulse-Presentation.pdf">Presention</a>
+                                <a class="dropdown-item" href="../pages/AgPulse-Presentation.pdf">Company Profile</a>
                             </div>
                         </li>
                         <li class="nav-item">

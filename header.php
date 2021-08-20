@@ -29,7 +29,7 @@
     <!------------------------- Navigation Section --------------------------->
     <div id="navigation-bar">
         <div class="container">
-            <nav class="navbar navbar-expand-md">
+            <nav class="navbar navbar-expand-lg">
                 <!-- Brand -->
                 <a class="navbar-brand" href="#">
                     <img src="./logo/agpulse-black-logo.png" alt="" width="230px">
@@ -51,7 +51,7 @@
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="./pages/about-us-inner.php">About us</a>
                                 <a class="dropdown-item" href="./pages/team.php">Our Team</a>
-                                <a class="dropdown-item" href="./pages/AgPulse-Presentation.pdf">Presention</a>
+                                <a class="dropdown-item" href="./pages/AgPulse-Presentation.pdf">Company Profile</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -81,14 +81,18 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="" method="POST" class="needs-validation" novalidate>
                         <div class="form-group">
                             <label for="userEmail">Email</label>
-                            <input type="email" name="userEmail" id="userEmail2" class="form-control" placeholder="Enter your email" required>
+                            <input type="email" name="userEmail" id="userEmail2" class="form-control" placeholder="Enter Your Email" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <!-- <div class="valid-feedback">Valid.</div> -->
+                            <div class="invalid-feedback">Please enter a valid email</div>
                         </div>
                         <div class="form-group">
                             <label for="userPass">Password</label>
-                            <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Enter password" required>
+                            <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Enter Password" required>
+                            <!-- <div class="valid-feedback">Valid.</div> -->
+                            <div class="invalid-feedback">Please enter a password</div>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn primary-default btn-block btn-success">SIGN IN</button>
@@ -114,16 +118,20 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="/action_page.php">
+                    <form action="./pages/action.php" method="POST" class="needs-validation" novalidate>
                         <div class="form-group">
-                            <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter your name" required>
+                            <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter Your Full Name" required>
+                            <!-- <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter your full name</div> -->
                         </div>
                         <div class="form-group">
-                            <input type="email" name="userEmail" id="userEmail" class="form-control" placeholder="Enter corporate email" required>
+                            <input type="email" name="userEmail" id="userEmail" class="form-control" placeholder="Enter Corporate Email" required   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <!-- <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter a valid email</div> -->
                         </div>
                         <div class="form-group d-flex">
-                            <select name="countryCode" id="" style="width: 36%;" class="form-control">
-                                <option value="" disabled selected>country Code</option>
+                            <select name="countryCode" id="" style="width: 36%;" class="form-control" required>
+                                <option value="" disabled selected>Country</option>
                                 <option data-countryCode="DZ" value="213">Algeria (+213)</option>
                                 <option data-countryCode="AD" value="376">Andorra (+376)</option>
                                 <option data-countryCode="AO" value="244">Angola (+244)</option>
@@ -341,22 +349,30 @@
                                 <option data-countryCode="GB" value="44">UK (+44)</option>
                                 <option data-countryCode="US" value="1">USA (+1)</option>
                             </select>
-                            <input type="tel" name="userNumber" id="userNumber" class="form-control" placeholder="phone number" required>
+                            <input type="tel" name="userNumber" id="userNumber" class="form-control" placeholder="Phone Number" required style="width: 64%;" pattern="^[0-9]+$">
+                            <!-- <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter a valid phone number with country code</div> -->
                         </div>
                         <div class="form-group">
-                            <select name="langOpt[]" multiple id="langOpt3" class="form-control d-flex">
-                                <option value="" disabled>Select products</option>
+                            <select name="langOpt[]" multiple id="langOpt3" class="form-control d-flex" required>
+                                <option value="" disabled>Select Products</option>
                                 <option value="pulses">Pulses</option>
                                 <option value="wheat">Wheat</option>
                                 <option value="corn">Corn</option>
                                 <option value="oilseeds">OilSeeds</option>
                             </select>
+                            <!-- <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please select at least one product</div> -->
                         </div>
                         <div class="form-group">
-                            <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Create password" required>
+                            <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Create Password" required>
+                            <!-- <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please enter a password</div> -->
                         </div>
+                        <!-- Input field for userArrive Section -->
+                        <input type="text" name="userArrive" id="" hidden value="SignUp Section">
                         <div class="text-center mt-3 form-group">
-                            <button type="submit" class="btn btn-success form-control">TRY FOR FREE</button>
+                            <button type="submit" class="btn btn-success form-control">SIGN UP FOR FREE</button>
                         </div>
                     </form>
                 </div>
@@ -368,3 +384,25 @@
         </div>
     </div>
     <!-------------XX------------ Navigation Section ------------XX--------------->
+
+    <script>
+        // Form Validation
+        // Disable form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
