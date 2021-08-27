@@ -5,8 +5,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-content">
                         <img src="../logo/agpulse-white-logo.png" alt="" width="230px" class="mb-2">
-                        <div class="footer-content-desc">
-                            <p class="mt-2" style="font-size: 18px;"><em>Market data to market intelligence</em></p>
+                        <div class="footer-content-desc text-center">
+                            <p class="mt-2" style="font-size: 18px;">Market data to market intelligence</p>
                             <!-- <p>AgPulse Analytica provides fundamental, technical and statistical analysis into global agriculture <span id="dots">...</span><span class="footer-read-more">markets to help stakeholders make informed investment and risk management decisions</span> <span class="footer-read-more-btn">read more</span></p> -->
                         </div>
                     </div>
@@ -25,11 +25,11 @@
                                 <a href="../#services-section">Services</a>
                             </li>
                             <li>
-                                <a href="../subscribe/subscribe.php">Subscribe</a>
+                                <a href="/pages/subscribe.php">Subscribe</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="../subscribe/subscribe.php/#faq-section">FAQ</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
     <div id="footer-footer-section">
         <div class="container">
             <div class="row justify-content-center p-2">
-                <p class="m-0">Copyright &copy; <span id="copyright-year"></span> <a href="index.php" class="text-white">AgPulse Analytica</a></p>
+                <p class="m-0">Copyright &copy; 2020 - <span id="copyright-year"></span> <a href="index.php" class="text-white">AgPulse Analytica</a></p>
             </div>
         </div>
     </div>

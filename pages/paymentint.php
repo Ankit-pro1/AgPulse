@@ -55,7 +55,7 @@ $gst = ($itemPrice * (18 / 100));
                             <label for="subwPhone">Work Phone<sup>*</sup></label>
                             <div class="d-flex">
                                 <select name="countryCode" id="" class="form-control" style="flex: 25%" required>
-                                    <option value="" disabled selected>country Code</option>
+                                    <option value="" disabled selected>Country</option>
                                     <option data-countryCode="DZ" value="213">Algeria (+213)</option>
                                     <option data-countryCode="AD" value="376">Andorra (+376)</option>
                                     <option data-countryCode="AO" value="244">Angola (+244)</option>
@@ -281,7 +281,7 @@ $gst = ($itemPrice * (18 / 100));
                             <label for="subPhone">Phone Number</label>
                             <div class="d-flex">
                                 <select name="countryCode" id="" class="form-control" style="flex: 25%">
-                                    <option value="" disabled selected>country Code</option>
+                                    <option value="" disabled selected>Country</option>
                                     <option data-countryCode="DZ" value="213">Algeria (+213)</option>
                                     <option data-countryCode="AD" value="376">Andorra (+376)</option>
                                     <option data-countryCode="AO" value="244">Angola (+244)</option>

@@ -1,0 +1,168 @@
+
+
+/********* Colors Variables **********/
+:root{
+    --primary: #009245;
+    --secondary: #23272b;
+    --ternary: #F1F1F1;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+body{
+    background-color: #f1f1f1;
+}
+a,
+a:hover,
+a:focus{
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+.btn:focus,
+button:focus{
+    outline: none;
+}
+
+ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+#wrapper-admin{
+    padding: 100px 0 0;
+}
+#wrapper-admin img{
+    width: 250px;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+#wrapper-admin form{
+    background-color: var(--white);
+    padding: 1.5rem;
+}
+
+
+
+/************* Header.php *************/
+#header-admin img{
+    width: 220px;
+}
+#header-admin{
+    background-color: var(--primary);
+    padding: 6px 0;
+}
+
+#header-admin .admin-logout{
+    margin: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+#header-admin .admin-logout:hover{
+    text-decoration: underline;
+}
+
+#admin-menubar{
+    background-color: #fff;
+}
+#admin-menubar .admin-menu li{
+    display: inline-block;
+    margin: 0 5px 0 0;
+    padding: 10px 0;
+}
+#admin-menubar .admin-menu li a{
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 7px 15px;
+    display: block;
+    transition: all 0.3s;
+}
+
+#admin-menubar .admin-menu li a:hover{
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+
+#admin-content{
+    padding: 20px 0;
+    min-height: 750px;
+}
+
+#admin-content .admin-heading{
+    font-size: 26px;
+    margin: 0 0 15px;
+    background: crimson;
+    color: white;
+    display: inline-block;
+    padding: 8px 40px;
+    text-transform: uppercase;
+}
+
+#admin-content .add-new{
+    color: #fff;
+    background-color: var(--primary);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    display: block;
+    transition: all 0.3s;
+}
+#admin-content .add-new:hover{
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+#admin-content .fa-edit{
+    color: var(--primary);
+}
+#admin-content .fa-trash{
+    color: rgb(221, 47, 47);
+}
+#admin-content .table thead th{
+    text-align: center;
+    text-transform: uppercase;
+}
+#admin-content .table tbody td{
+    text-align: center;
+}
+#admin-content .table tbody tr td:nth-child(2){
+    text-align: left;
+}
+
+#admin-content .table,td, th{
+    border: 2px solid white;
+    border-collapse: collapse;
+}
+#admin-content .pagination .page-item{
+    margin: 0 4px;
+}
+#admin-content .pagination .page-link:hover,
+#admin-content .pagination .page-link.active{
+    color: var(--white);
+    background-color: var(--primary);
+}
+#admin-content .pagination .page-link{
+    color: var(--primary);
+}
+form{
+    background: var(--white);
+    padding: 25px;
+    box-shadow:0 1px 3px rgba(0, 0, 0, 0.13);
+}
+/* footer.php */
+#footer{
+    background-color: var(--secondary);
+    color: white;
+    padding: 12px 0;
+    margin-top: 60px;
+}
+
+

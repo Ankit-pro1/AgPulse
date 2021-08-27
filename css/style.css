@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 
 body{
-    font-family: 'Raleway', 'sanserif';
-    font-weight: var(--f500);
+    /* font-weight: var(--f500); */
     overflow-x: hidden;
 }
 html{
@@ -321,6 +320,9 @@ a:active{
 #blog-section .blog-content:hover{
     background-color: var(--ternary);
 }
+#blog-section .blog-content h3{
+    font-size: 22px;
+}
 #blog-section .heading-title{
     margin-bottom: 10px;
 }
@@ -331,6 +333,7 @@ a:active{
     border-radius: 4px;
     padding: 2px 0;
 }
+
 #blog-section .more-blog-btn{
     margin-bottom:16px;
 }

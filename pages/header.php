@@ -373,7 +373,7 @@
                             <div class="invalid-feedback">Please enter a password</div> -->
                         </div>
                         <!-- Input field for userArrive Section -->
-                        <input type="text" name="userArrive" id="" hidden value="SignUp Section">
+                        <input type="text" name="userArrive" id="" hidden value="Sign-Up">
                         <div class="text-center mt-3 form-group">
                             <button type="submit" class="btn btn-success form-control">TRY FOR FREE</button>
                         </div>

@@ -1,6 +1,6 @@
 <!----------------------------- Header File ----------------------------->
 <?php
-include_once('header.php');
+include_once 'header.php';
 ?>
 <!----------------------------- Header File ----------------------------->
 
@@ -14,7 +14,7 @@ include_once('header.php');
                     <p>AgPulse Analytica provides fundamental, technical and statistical analysis into global agriculture markets to help stakeholders make informed investment and risk management decisions</p>
                 </div>
             </div>
-            <form id="hero-form" action="/action_page.php" method="POST" class="needs-validation" novalidate>
+            <form id="hero-form" action="./data/users.php" method="POST" class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col">
                         <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter Your Name" required>
@@ -259,7 +259,7 @@ include_once('header.php');
                         <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Create Password" required>
                     </div>
                     <!-- Input field for userArrive  -->
-                        <input type="text" name="userArrive" id="userArrive" hidden value="Hero Section">
+                        <input type="text" name="userArrive" id="userArrive" hidden value="Hero">
                     <div class="col text-center mt-2">
                         <button type="submit" class="btn btn-success">TRY FOR FREE</button>
                     </div>
@@ -288,9 +288,9 @@ include_once('header.php');
                         <div class="item-overlay-content">
                             <div class="item-overlay-inner-content">
                                 <li>Yellow Peas</li>
-                                <li>Lentils</li>
-                                <li>Kabuli Chickpea</li>
-                                <li>Desi Chickpea</li>
+                                <li>Desi Chickpeas</li>
+                                <li>Kabuli Chickpeas</li>
+                                <li>Lentils</li>                                
                             </div>
                         </div>
                     </div>
@@ -373,7 +373,7 @@ include_once('header.php');
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <form action="/action_page.php" method="POST" class="needs-validation" novalidate>
+                                <form action="./data/users.php" method="POST" class="needs-validation" novalidate>
                                     <div class="form-group">
                                         <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter Your Name" required>
                                     </div>
@@ -615,7 +615,7 @@ include_once('header.php');
                                         <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Create Password" required>
                                     </div>
                                     <!-- Input field for userArrive  -->
-                                    <input type="text" name="userArrive" id="userArrive" hidden value="Free Trial Section">
+                                    <input type="text" name="userArrive" id="userArrive" hidden value="Free Trial">
                                     <div class="text-center mt-3 form-group">
                                         <button type="submit" class="btn btn-success form-control">TRY FOR FREE</button>
                                     </div>
@@ -634,21 +634,34 @@ include_once('header.php');
 </div>
 <!---------------XX----------------- Subscription Section End ------------XX------------>
 
+
+
 <!---------------------------------- Blogs Section ------------------------------------>
 <div id="blog-section" class="margin">
     <div class="container">
         <div class="row justify-content-center">
             <h1 class="heading-title">Read Our Blogs</h1>
         </div>
-        <!-- First Row Containing Four Blogs -->
+
+        <!--------------- First Row Containing Pulses and Wheat Blogs --------------->
         <div class="row">
+            <!---------- Pulses Blogs ---------->
             <div class="col-lg-6">
                 <h2 class="text-center">Pulses</h2>
                 <div class="row mb-3">
-                    <!---------- Blog 1 ---------->
+                    <?php
+                            include_once "config.php";
+                            $sql = "SELECT * FROM blogs
+                            LEFT JOIN category ON blogs.blogCategory = category.cId
+                            WHERE cName = 'Pulses' ORDER BY blogId DESC limit 2 ";
+                            // die($sql);
+                            $result = mysqli_query($conn, $sql) or die("Query Failed");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                    ?>
                     <div class="col-md-6">
                         <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
+                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
                             <div class="blog-information">
                                 <span>
                                     <i class="far fa-user"></i>
@@ -656,10 +669,10 @@ include_once('header.php');
                                 </span>
                                 <span>
                                     <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
+                                    <span><?php echo $row['blogDate']?></span>
                                 </span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog1">continue reading</button></p>
+                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog1">continue reading</button></p>
 
                             <!-- More Blog Modal Pop Up -->
                             <div id="moreBlog1" class="modal" role="dialog">
@@ -668,7 +681,7 @@ include_once('header.php');
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
+                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
@@ -679,14 +692,15 @@ include_once('header.php');
                                                 </span>
                                                 <span>
                                                     <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
+                                                    <span><?php echo $row['blogDate']?></span>
                                                 </span>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
+                                            <p>
+                                                <?php echo $row['blogDesc']?>
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
 
@@ -694,69 +708,35 @@ include_once('header.php');
                             </div>
                         </div>
                     </div>
-
-                    <!---------- Blog 2 ---------->
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
-                                </span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog2">continue reading</button></p>
-
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog2" class="modal" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
-                                                </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                    }
+                }else{
+                    echo"<p>Blogs no found</p>";
+                }
+                ?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
-                    <a href="./blog/blog.php" class="btn btn-default btn-success">Read more</a>
+                    <a href="./blog/blog.php?bName=Pulses" class="btn btn-default btn-success">Read more</a>
                 </div>
             </div>
 
+            <!-------------- Wheat Blogs ---------------->
             <div class="col-lg-6">
                 <h2 class="text-center">Wheat</h2>
                 <div class="row mb-3">
-                    <!---------- Blog 3 ---------->
+                    <?php
+                            include_once "config.php";
+                            $sql = "SELECT * FROM blogs
+                            LEFT JOIN category ON blogs.blogCategory = category.cId
+                            WHERE cName = 'Wheat' ORDER BY blogId DESC limit 2";
+                            // die($sql);
+                            $result = mysqli_query($conn, $sql) or die("Query Failed");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                    ?>
                     <div class="col-md-6">
                         <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
+                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
                             <div class="blog-information">
                                 <span>
                                     <i class="far fa-user"></i>
@@ -764,10 +744,10 @@ include_once('header.php');
                                 </span>
                                 <span>
                                     <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
+                                    <span><?php echo $row['blogDate']?></span>
                                 </span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog3">continue reading</button></p>
+                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog3">continue reading</button></p>
 
                             <!-- More Blog Modal Pop Up -->
                             <div id="moreBlog3" class="modal" role="dialog">
@@ -776,7 +756,7 @@ include_once('header.php');
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
+                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
@@ -787,14 +767,15 @@ include_once('header.php');
                                                 </span>
                                                 <span>
                                                     <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
+                                                    <span><?php echo $row['blogDate']?></span>
                                                 </span>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
+                                            <p>
+                                                <?php echo $row['blogDesc']?>
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
 
@@ -802,71 +783,37 @@ include_once('header.php');
                             </div>
                         </div>
                     </div>
-                    <!---------- Blog 4 ---------->
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
-                                </span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog1">continue reading</button></p>
-
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog1" class="modal" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
-                                                </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                    }
+                 }else{
+                    echo"<p>Blogs no found</p>";
+                 } ; ?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
-                    <a href="./blog/blog.php" class="btn btn-default btn-success">Read more</a>
+                    <a href="./blog/blog.php?bName=Wheat" class="btn btn-default btn-success">Read more</a>
                 </div>
             </div>
         </div>
 
-        <!-- seconds Row Containing Next Four Blogs -->
+        <!---------------- seconds Row Containing Corn and Oilseeds BLogs ----------------->
         <div class="row">
+            <!--------- Corn Blogs ------------>
             <div class="col-lg-6">
                 <h2 class="text-center">Corn</h2>
                 <div class="row  mb-3">
-                    <!---------- Blog 5 ---------->
+                    <?php
+                            include_once "config.php";
+                            $sql = "SELECT * FROM blogs
+                            LEFT JOIN category ON blogs.blogCategory = category.cId
+                            WHERE cName = 'Corn' ORDER BY blogId DESC limit 2";
+                            // die($sql);
+                            $result = mysqli_query($conn, $sql) or die("Query Failed");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                    ?>
                     <div class="col-md-6">
                         <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
+                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
                             <div class="blog-information">
                                 <span>
                                     <i class="far fa-user"></i>
@@ -874,10 +821,10 @@ include_once('header.php');
                                 </span>
                                 <span>
                                     <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
+                                    <span><?php echo $row['blogDate']?></span>
                                 </span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog5">continue reading</button></p>
+                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog5">continue reading</button></p>
 
                             <!-- More Blog Modal Pop Up -->
                             <div id="moreBlog5" class="modal" role="dialog">
@@ -886,7 +833,7 @@ include_once('header.php');
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
+                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
@@ -897,14 +844,15 @@ include_once('header.php');
                                                 </span>
                                                 <span>
                                                     <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
+                                                    <span><?php echo $row['blogDate']?></span>
                                                 </span>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
+                                            <p>
+                                                <?php echo $row['blogDesc'];?>
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
 
@@ -912,67 +860,31 @@ include_once('header.php');
                             </div>
                         </div>
                     </div>
-                    <!---------- Blog 6 ---------->
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
-                                </span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog1">continue reading</button></p>
-
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog1" class="modal" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
-                                                </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php 
+                    }
+                 }?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
-                    <a href="./blog/blog.php" class="btn btn-default btn-success">Read more</a>
+                    <a href="./blog/blog.php?bName=Corn" class="btn btn-default btn-success">Read more</a>
                 </div>
             </div>
+            <!--------- Oilseeds Blogs ----------->
             <div class="col-lg-6">
                 <h2 class="text-center">Oilseeds</h2>
                 <div class="row  mb-3">
-                    <!---------- Blog 7 ---------->
+                <?php
+                            include_once "config.php";
+                            $sql = "SELECT * FROM blogs
+                            LEFT JOIN category ON blogs.blogCategory = category.cId
+                            WHERE cName = 'Oilseeds' ORDER BY blogId DESC limit 2";
+                            // die($sql);
+                            $result = mysqli_query($conn, $sql) or die("Query Failed");
+                            if(mysqli_num_rows($result) > 0){
+                                while($row = mysqli_fetch_assoc($result)){
+                    ?>
                     <div class="col-md-6">
                         <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
+                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
                             <div class="blog-information">
                                 <span>
                                     <i class="far fa-user"></i>
@@ -980,10 +892,10 @@ include_once('header.php');
                                 </span>
                                 <span>
                                     <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
+                                    <span><?php echo $row['blogDate']?></span>
                                 </span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog7">continue reading</button></p>
+                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog7">continue reading</button></p>
 
                             <!-- More Blog Modal Pop Up -->
                             <div id="moreBlog7" class="modal" role="dialog">
@@ -992,7 +904,7 @@ include_once('header.php');
                                     <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
+                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
@@ -1003,14 +915,15 @@ include_once('header.php');
                                                 </span>
                                                 <span>
                                                     <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
+                                                    <span><?php echo $row['blogDate'];?></span>
                                                 </span>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
+                                            <p>
+                                                <?php echo $row['blogDesc'];?>
                                             </p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
 
@@ -1018,64 +931,21 @@ include_once('header.php');
                             </div>
                         </div>
                     </div>
-                    <!---------- Blog 8 ---------->
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading">Soyoil Usage</h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span>02 Aug, 2020</span>
-                                </span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aliquam ex aliquid cum voluptatem libero, sint perferendis. Voluptatem, esse incidunt. <button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog8">continue reading</button></p>
-
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog8" class="modal" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Soyoil Usage</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span>02 Aug, 2020</span>
-                                                </span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, commodi! Sit perspiciatis voluptates, cumque placeat exercitationem explicabo ipsam est corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet corporis optio quas placeat, fugiat cum reprehenderit quod ipsa recusandae iusto perspiciatis autem totam pariatur a adipisci. Sequi sapiente impedit eveniet?
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   <?php 
+                   }
+                 }; ?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
-                    <a href="./blog/blog.php" class="btn btn-default btn-success">Read more</a>
+                    <a href="./blog/blog.php?bName=Oilseeds" class="btn btn-default btn-success">Read more</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!---------------XX------------------- Blogs Section End ----------------XX-------------------->
+
+
+
 
 <!----------------------------------- Our Services Section -------------------------------->
 <div id="services-section" class="padding margin-bottom">
@@ -1167,7 +1037,8 @@ include_once('header.php');
                             </li>
                         </ul>
                         <div class="row justify-content-center subscribe-btn">
-                            <button class="btn btn-dark" data-toggle="modal" data-target="#gitPop">Get in touch</button>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#gitPop">Get in touch</button>
+                            
                             <!-- Modal Pop up for Get in touch -->
                             <div id="gitPop" class="modal" role="dialog">
                                 <div class="modal-dialog">
@@ -1179,12 +1050,12 @@ include_once('header.php');
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="" method="POST" class="needs-validation" novalidate>
+                                            <form action="./data/gusers.php" method="POST" class="needs-validation" novalidate>
                                                 <div class="form-group">
                                                     <input type="text" name="gName" id="gName" placeholder="Full name" class="form-control" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" name="gCname" id="gCname" placeholder="Company name" class="form-control" required >
+                                                    <input type="text" name="gCompany" id="gCname" placeholder="Company Name" class="form-control" required >
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="email" name="gEmail" id="gEmail" placeholder="Corporate Email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
@@ -1193,7 +1064,7 @@ include_once('header.php');
                                                     <input type="tel" name="gPhone" id="gPhone" placeholder="Phone Number" class="form-control" required pattern="[0-9]+">
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea name="gMsg" id="" cols="30" rows="4" class="form-control" placeholder="Type your requirement"></textarea>
+                                                    <textarea name="gReq" id="" cols="30" rows="4" class="form-control" placeholder="Type Your Requirement"></textarea>
                                                 </div>
                                                 <div class="form-group text-center">
                                                     <button type="submit" class="btn btn-dark">Submit</button>

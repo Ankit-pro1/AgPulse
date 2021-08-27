@@ -76,7 +76,7 @@
     <div id="footer-footer-section">
         <div class="container">
             <div class="row justify-content-center p-2">
-                <p class="m-0">Copyright &copy; <span id="copyright-year"></span> <a href="index.php" class="text-white">AgPulse Analytica</a></p>
+                <p class="m-0">Copyright &copy; 2020 - <span id="copyright-year"></span> <a href="index.php" class="text-white">AgPulse Analytica</a></p>
             </div>
         </div>
     </div>

@@ -118,7 +118,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="./pages/action.php" method="POST" class="needs-validation" novalidate>
+                    <form action="./data/users.php" method="POST" class="needs-validation" novalidate>
                         <div class="form-group">
                             <input type="text" name="userName" id="userName" class="form-control" placeholder="Enter Your Full Name" required>
                             <!-- <div class="valid-feedback">Valid.</div>
@@ -370,7 +370,7 @@
                             <div class="invalid-feedback">Please enter a password</div> -->
                         </div>
                         <!-- Input field for userArrive Section -->
-                        <input type="text" name="userArrive" id="" hidden value="SignUp Section">
+                        <input type="text" name="userArrive" id="" hidden value="Sign-Up">
                         <div class="text-center mt-3 form-group">
                             <button type="submit" class="btn btn-success form-control">SIGN UP FOR FREE</button>
                         </div>
