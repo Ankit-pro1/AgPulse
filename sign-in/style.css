@@ -1,0 +1,16 @@
+body{
+    background-color: #f1f1f1;
+}
+#wrapper-user{
+    padding: 100px 0 0;
+}
+#wrapper-user img{
+    width: 250px;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+#wrapper-user form{
+    background-color: var(--white);
+    padding: 1.5rem;
+}

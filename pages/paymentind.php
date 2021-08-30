@@ -34,10 +34,12 @@ $gst = ($itemPrice * (18 / 100));
             </div>
             <div class="col-12">
                 <h5 class="payment-heading">SUBSCRIBER DETAIL</h5>
-                <form action="pay.php" method='POST' class="needs-validation" novalidate>
+                <form action="payind.php" method='POST' class="needs-validation" novalidate>
+                    <!-- Item Name -->
+                    <input type="hidden" name="pName" value="<?php echo $itemName ?>">
                     <!-- Total Price Value (Price + GST Price) -->
-                    <input type="text" name="itemPrice" value="<?php echo $gst + $itemPrice; ?>" hidden>
-                    <!-- Total Price Value (Price + GST Price) -->
+                    <input type="hidden" name="pPrice" value="<?php echo $gst + $itemPrice; ?>" >
+
                     <div class="row mb-3">
                         <div class="col">
                             <label for="subName">Full Name <sup>*</sup> </label>
@@ -136,13 +138,7 @@ $gst = ($itemPrice * (18 / 100));
                     <div class="row mb-3">
                         <div class="col">
                             <label for="subpinCode">Pin Code</label>
-                            <input type="text" name="subZipCode" class="form-control" placeholder="Pin Code">
-                        </div>
-                        <div class="col">
-                            <label for="subCountry">Country</label>
-                            <select name="subCountry" class="form-control">
-                                <option value="India" selected>India</option>
-                            </select>
+                            <input type="text" name="subPinCode" class="form-control" placeholder="Pin Code">
                         </div>
                     </div>
                     <div class="form-group form-check">

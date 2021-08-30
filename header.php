@@ -16,7 +16,6 @@
     <!-- CSS Mutliselect Plugin -->
     <link rel="stylesheet" href="./Mutliselect/bootstrap-multiselect.css">
 
-
     <!-- External main CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
@@ -60,8 +59,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#blog-section">Blogs</a>
                         </li>
+                        <li class="nav-item mr-1">
+                            <a class="nav-link custom-btn text-white " href="sign-in">Sign In</a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link custom-signin-btn" data-toggle="modal" data-target="#signinModal">Sign In</a>
+                            <a class="nav-link custom-btn text-white" data-toggle="modal" data-target="#signupModal">Sign Up</a>
                         </li>
                     </ul>
                 </div>
@@ -71,10 +73,10 @@
 
 
     <!-- Sign in modal pop box -->
-    <div id="signinModal" class="modal" role="dialog">
+    <!-- <div id="signinModal" class="modal" role="dialog">
         <div class="modal-dialog">
 
-            <!-- Modal content-->
+            Modal content
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Sign In</h4>
@@ -85,13 +87,13 @@
                         <div class="form-group">
                             <label for="userEmail">Email</label>
                             <input type="email" name="userEmail" id="userEmail2" class="form-control" placeholder="Enter Your Email" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                            <!-- <div class="valid-feedback">Valid.</div> -->
+                            <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please enter a valid email</div>
                         </div>
                         <div class="form-group">
                             <label for="userPass">Password</label>
                             <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Enter Password" required>
-                            <!-- <div class="valid-feedback">Valid.</div> -->
+                            <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please enter a password</div>
                         </div>
                         <div class="form-group">
@@ -105,7 +107,7 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
     <!-- Create an account pop box -->
     <div id="signupModal" class="modal" role="dialog">

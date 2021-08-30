@@ -653,9 +653,9 @@ include_once 'header.php';
                             include_once "config.php";
                             $sql = "SELECT * FROM blogs
                             LEFT JOIN category ON blogs.blogCategory = category.cId
-                            WHERE cName = 'Pulses' ORDER BY blogId DESC limit 2 ";
+                            WHERE cName = 'Pulse' ORDER BY blogId DESC limit 2 ";
                             // die($sql);
-                            $result = mysqli_query($conn, $sql) or die("Query Failed");
+                            $result = mysqli_query($conn, $sql) or mysqli_error($conn);
                             if(mysqli_num_rows($result) > 0){
                                 while($row = mysqli_fetch_assoc($result)){
                     ?>

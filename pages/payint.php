@@ -16,8 +16,8 @@ $api = new Api($keyId, $keySecret);
 //
 
 $itemPrice = $_POST['itemPrice'];
-$firstName = $_POST['subfName'];
-$lastName = $_POST['sublName'];
+$firstName = $_POST['subName'];
+$lastName = $_POST['subName'];
 $subPhone = $_POST['subwPhone'];
 $subEmail = $_POST['subEmail'];
 

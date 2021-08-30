@@ -7,7 +7,8 @@
     $blogDate = mysqli_real_escape_string($conn, $_POST['blogDate']);
 
     $sql = "INSERT INTO blogs(blogTitle, blogDesc, blogCategory, blogDate) VALUES('{$blogTitle}','{$blogDesc}','{$blogCategory}','{$blogDate}')";
-    $result = mysqli_query($conn, $sql) or die("Query Failed");
+    $result = mysqli_query($conn, $sql);
+    
     if($result){
         header("location:$location/blog.php");
     }

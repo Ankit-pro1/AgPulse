@@ -127,15 +127,6 @@ a:active{
     background-color: var(--primary);
     color: var(--white);
 }
-#navigation-bar .custom-signin-btn{
-    background-color: var(--primary);
-    padding-left: 40px;
-    padding-right: 40px;
-    border-radius: 22px;
-    margin-left: 18px;
-    color: var(--white);
-    cursor: pointer;
-}
 #signupModal .multiselect-native-select .btn-group{
     width: 100%;
 }
@@ -517,4 +508,5 @@ a:active{
 }
 #blog-sidebar .recent-post-container .blog-content > p{
     font-size: 14px;
-} 
+}
+

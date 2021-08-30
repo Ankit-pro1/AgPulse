@@ -24,18 +24,19 @@ $gst = ($itemPrice * (18 / 100));
                         <tr>
                             <td>1.</td>
                             <td><?php echo $itemName; ?></td>
-                            <td>US $ <?php echo $itemPrice; ?> </td>
-                            <td style="font-weight: 600; font-size:16px">US $ <?php echo $itemPrice; ?> </td>
+                            <td>USD <?php echo $itemPrice; ?> </td>
+                            <td style="font-weight: 600; font-size:16px">USD <?php echo $itemPrice; ?> </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-12">
                 <h5 class="payment-heading">SUBSCRIBER DETAIL</h5>
-                <form action="pay.php" method='POST' class="needs-validation" novalidate>
+                <form action="payint.php" method='POST' class="needs-validation" novalidate>
+                    <!-- Item Name -->
+                    <input type="hidden" name="itemName" value="<?php echo $gst + $itemPrice; ?>">
                     <!-- Total Price Value (Price + GST Price) -->
-                    <input type="text" name="itemPrice" value="<?php echo $gst + $itemPrice; ?>" hidden>
-                    <!-- Total Price Value (Price + GST Price) -->
+                    <input type="hidden" name="itemPrice" value="<?php echo $gst + $itemPrice; ?>" hidden>
                     <div class="row mb-3">
                         <div class="col">
                             <label for="subName">Full Name <sup>*</sup> </label>

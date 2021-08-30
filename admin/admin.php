@@ -16,7 +16,7 @@ include_once 'header.php';
             <?php
                     include_once "config.php";
                     $sql = "SELECT adminId, adminName, adminUsername FROM admin ORDER BY adminId DESC";
-                    $result = mysqli_query($conn, $sql);
+                    $result = mysqli_query($conn, $sql) or die($sql);
                     if(mysqli_num_rows($result) > 0){
                 ?>
                 <table class="table table-striped table-md-responsive">

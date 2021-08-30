@@ -59,7 +59,13 @@
                                 <a href="gusers.php">Gusers</a>
                             </li>
                             <li>
-                                <a href="subscribers.php">Subscribers</a>
+                                <a href="indsubs.php">India Subs</a>
+                            </li>
+                            <li>
+                                <a href="indpayment.php">India Payment</a>
+                            </li>
+                            <li>
+                                <a href="intsubs.php">International Subs</a>
                             </li>
                             <li>
                                 <a href="admin.php">Admin</a>
