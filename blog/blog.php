@@ -1,8 +1,11 @@
 <?php
+session_start();
+if(!isset($_SESSION['wuserName'])){
+    header("location:http://localhost/AgPulse/index.php");
+}
 include_once 'header.php';
 $blog = $_GET['bName'];
 ?>
-
 <!-------------------- Pulse Blog ------------------>
 <div id="blog-page">
     <div class="container-fluid">
@@ -37,10 +40,10 @@ $blog = $_GET['bName'];
                                         <span><?php echo $row['blogDate'] ?></span>
                                     </span>
                                 </div>
-                                <p><?php echo substr($row['blogDesc'], 0, 150) . "..."; ?><button class="blog-btn btn-success btn" data-toggle="modal" data-target="#moreBlog9">read more</button></p>
+                                <p><?php echo substr($row['blogDesc'], 0, 150) . "..."; ?><button class="blog-btn btn-success btn" data-toggle="modal" data-target="<?php echo '#a'.$row['blogId'] ?>">read more</button></p>
                                 <!-- More Blog Modal Pop Up -->
-                                <div id="moreBlog9" class="modal" role="dialog">
-                                    <div class="modal-dialog">
+                                <div id="<?php echo 'a'.$row['blogId'] ?>" class="modal" role="dialog">
+                                    <div class="modal-dialog modal-lg">
 
                                         <!-- Modal content-->
                                         <div class="modal-content">

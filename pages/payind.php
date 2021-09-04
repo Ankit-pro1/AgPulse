@@ -1,7 +1,10 @@
 <?php
-// Database configuration
 session_start();
+
+// Database Connection
 include_once('configdata.php');
+
+// Razorpay API Connection
 require('config.php');
 require('razorpay-php/Razorpay.php');
 

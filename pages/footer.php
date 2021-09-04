@@ -25,7 +25,7 @@
                                 <a href="../#services-section">Services</a>
                             </li>
                             <li>
-                                <a href="/pages/subscribe.php">Subscribe</a>
+                                <a href="subscribe.php">Subscribe</a>
                             </li>
                             <!-- <li>
                                 <a href="../subscribe/subscribe.php/#faq-section">FAQ</a>

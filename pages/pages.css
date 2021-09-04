@@ -116,7 +116,7 @@
     color: var(--white);
 }
 /**********************XX******************** Subscribe Page End ***************XX****************/
-/******************************************** India Page ****************************************/
+/******************************************** India Page/International Page ****************************************/
 #india-page{
     margin-top: 100px;
 }
@@ -141,6 +141,11 @@
 }
 #india-page .form form{
     width: 100%;
+}
+#india-page .form .line sup{
+    font-size: 18px;
+    font-weight: 500;
+    color: red;
 }
 #india-page .form form p{
     margin: 0;
@@ -167,11 +172,8 @@
     transition: all 0.3s ease-in;
     cursor: pointer;
 }
-#india-page .quaterly:hover{
-    transform: scale(1.05);
-}
-#india-page .yearly:hover{
-    transform: scale(1.05);
+#india-page .quaterly:hover, #india-page .yearly:hover{
+    color:var(--primary);
 }
 /***********************XX********************* India Page End ******************XX**********************/
 

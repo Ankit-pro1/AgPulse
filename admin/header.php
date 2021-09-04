@@ -1,6 +1,10 @@
 <?php
     session_start();
-;?>
+    include_once('config.php');
+    if(!isset($_SESSION['admin_name'])){
+        header("location:$location/index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

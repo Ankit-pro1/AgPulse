@@ -1,9 +1,8 @@
 <?php
 include_once "header.php";
-$item = $_GET['optRadio'];
-$itemPrice = filter_var($item, FILTER_SANITIZE_NUMBER_INT);
-$itemName = preg_replace("/[^a-zA-Z]+/", " ", $item);
-$gst = ($itemPrice * (18 / 100));
+$product = $_GET['optRadio'];
+$pPrice = filter_var($product, FILTER_SANITIZE_NUMBER_INT);
+$pName = preg_replace("/[^a-zA-Z]+/", " ", $product);
 ?>
 
 <div id="paymentind">
@@ -23,20 +22,20 @@ $gst = ($itemPrice * (18 / 100));
                     <tbody>
                         <tr>
                             <td>1.</td>
-                            <td><?php echo $itemName; ?></td>
-                            <td>USD <?php echo $itemPrice; ?> </td>
-                            <td style="font-weight: 600; font-size:16px">USD <?php echo $itemPrice; ?> </td>
+                            <td><?php echo $pName; ?></td>
+                            <td>USD <?php echo $pPrice; ?> </td>
+                            <td style="font-weight: 600; font-size:16px">USD <?php echo $pPrice; ?> </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="col-12">
                 <h5 class="payment-heading">SUBSCRIBER DETAIL</h5>
-                <form action="payint.php" method='POST' class="needs-validation" novalidate>
+                <form action="demoint.php" method='POST' class="needs-validation" novalidate>
                     <!-- Item Name -->
-                    <input type="hidden" name="itemName" value="<?php echo $gst + $itemPrice; ?>">
-                    <!-- Total Price Value (Price + GST Price) -->
-                    <input type="hidden" name="itemPrice" value="<?php echo $gst + $itemPrice; ?>" hidden>
+                    <input type="hidden" name="pName" value="<?php echo $pName; ?>">
+                    <!-- Item Price  -->
+                    <input type="hidden" name="pPrice" value="<?php echo $pPrice; ?>">
                     <div class="row mb-3">
                         <div class="col">
                             <label for="subName">Full Name <sup>*</sup> </label>

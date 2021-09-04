@@ -49,7 +49,7 @@ include_once 'header.php';
                 </div>
             </div>
             <div class="col-lg-6">
-                <p>Thanks for your interest in the best commodity research available. We have three main subscriptions available: Daily Commentary, Weekly Market Letter, and our Research Center.</p>
+                <p>Thanks for your interest in the best commodity research available. We provide weekly/monthly newsletters for the following commodities.</p>
                 <p>If you do not see a combination of market segments you are interested in, please drop us an <a href="mailto:gaurav@agpulse.net">email</a> and we'll be happy to get you what you need.</p>
             </div>
         </div>
@@ -212,6 +212,9 @@ include_once 'header.php';
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row line">
+                    <p class="ml-2"><sup>*</sup>GST excluding</p>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-success text-center pl-5 pr-5">Next</button>

@@ -16,7 +16,7 @@ include_once 'header.php';
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Description</label>
-                        <textarea name="blogDesc" class="form-control mytinymc" rows="5"></textarea>
+                        <textarea name="blogDesc" class="form-control mytinymce" rows="5"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Category</label>

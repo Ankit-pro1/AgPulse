@@ -35,14 +35,26 @@
             <div class="row">
                 <div class="offset-4 col-md-4">
                     <img class="logo" src="../logo/agpulse-black-logo.png">
-                    <h3 class="mt-4 mb-4">Forget Password</h3>
+                    <h3 class="mt-4 mb-4">Reset Password</h3>
                     <!-- Form Start -->
                     <form method="POST">
-                        <div class="form-group">
-                            <label>Enter the registered email</label>
-                            <input type="text"  class="form-control" placeholder="Enter the Email" id="email" required>
+                        <div class="form-group first-box">
+                            <label>Enter Registered Email</label>
+                            <input type="text"  class="form-control" placeholder="Email" id="email" required>
+                            <span id="email_error"></span>
                         </div>
-                        <button type="button" class="btn btn-block btn-success" onclick="send_otp()"/>Send OTP</button>
+                        <div class="form-group first-box">
+                            <button type="button" class="btn btn-block btn-success" onclick="send_otp()">Send OTP</button>
+                        </div>
+
+                        <div class="form-group second-box">
+                            <label>Enter sent OTP</label>
+                            <input type="text"  class="form-control" placeholder="OTP" id="otp" required>
+                            <span id="otp_error"></span>
+                        </div>
+                        <div class="form-group second-box">
+                            <button type="button" class="btn btn-block btn-success" onclick="submit_otp()">Submit OTP</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -57,11 +69,44 @@
                 type:"POST",
                 data:"email="+email,
                 success:function(result){
+                    if(result=="yes"){
+                        $('.second-box').show();
+                        $('.first-box').hide();
+                    }
+                    if(result=="not_exist"){
+                        $('#email_error').html("Please enter valid email");
+                    }
+                
+                }
+            });
+        }
+        function submit_otp(){
+            var otp = $('#otp').val();
+            $.ajax({
+                url:"check-otp.php",
+                type:"POST",
+                data:"otp="+otp,
+                success:function(result){
+                    if(result=="yes"){
+                        window.location = "update-password.php";
+                    }
+                    if(result=="not_exist"){
+                       $('#otp_error').html("Please enter valid otp");
+                    }
                 
                 }
             });
         }
     </script>
+
+    <style>
+        .second-box{
+            display:none;
+        }
+        #email_error, #otp_error{
+            color: red;
+        }
+    </style>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-include_once "header.php";
+include_once('header.php');
 ?>
 
 <!------------------- Our Team Section ---------------->
@@ -46,6 +46,7 @@ include_once "header.php";
                     </div>
                 </div>
             </div>
+
              <!-- Member Content -->
              <div class="col-lg-8 order-lg-1">
                 <div class="member-text">
@@ -58,6 +59,7 @@ include_once "header.php";
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 <!------------XX------- Our Team Section Ends --------XX-------->

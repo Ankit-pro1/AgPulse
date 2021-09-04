@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Description</label>
-                        <textarea name="blogDesc" class="form-control mytinymc" rows="5" valu>
+                        <textarea name="blogDesc" class="form-control mytinymce" rows="5" valu>
                             <?php echo $row['blogDesc']?>
                         </textarea>
                     </div>

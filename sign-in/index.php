@@ -45,13 +45,16 @@
                             <input type="password" name="password" class="form-control" placeholder="Enter the Password" required>
                         </div>
                         <input type="submit" name="sign-in" class="btn btn-block btn-success" value="Sign In" />
-                        <a href="forget-password.php" class="text-success">forget your password?</a>
+                        <div class="row justify-content-around pt-2 pb-2 imp-links">
+                            <a href="forget-password.php" class="text-success">forget your password?</a>
+                            <a href="create-an-account.php" class="text-dark">create an account</a>
+                        </div>
                     </form>
                     <!-- /Form  End -->
                     <?php
                     if (isset($_POST['sign-in'])) {
                         include_once 'config.php';
-                        $username = mysqli_real_escape_string($conn, $_POST['username']);
+                        $useremail = mysqli_real_escape_string($conn, $_POST['useremail']);
                         $password = sha1($_POST['password']);
 
                         $sql = "SELECT userId, userName, userEmail FROM users WHERE userEmail = '{$useremail}' AND userPass = '{$password}'";
@@ -60,9 +63,9 @@
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 session_start();
-                                $_SESSION['userId'] = $row['userId'];
-                                $_SESSION['userName'] = $row['userName'];
-                                $_SESSION['userEmail'] = $row['userEmail'];
+                                $_SESSION['wuserId'] = $row['userId'];
+                                $_SESSION['wuserName'] = strtok($row['userName'], " ");
+                                $_SESSION['wuserEmail'] = $row['userEmail'];
                                 // $_SESSION['role'] = $row['role'];
                                 header("location:$location/");
                             }
@@ -75,6 +78,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

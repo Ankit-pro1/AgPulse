@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    include_once('config.php');
+    if(!isset($_SESSION['admin_name'])){
+        header("location:$location/index.php");
+    }
+?>
 <!-- Footer -->
 <div id="footer">
     <div class="container">

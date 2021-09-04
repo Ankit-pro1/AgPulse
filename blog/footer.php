@@ -16,7 +16,7 @@
                         <h5 class="footer-content-heading">Quick Links</h5>
                         <ul>
                             <li>
-                                <a href="./about-us-inner.php">About Us</a>
+                                <a href="../pages/about-us-inner.php">About Us</a>
                             </li>
                             <li>
                                 <a href="../#blog-section">Blogs</a>
@@ -25,7 +25,7 @@
                                 <a href="../#services-section">Services</a>
                             </li>
                             <li>
-                                <a href="/pages/subscribe.php">Subscribe</a>
+                                <a href="../pages/subscribe.php">Subscribe</a>
                             </li>
                             <!-- <li>
                                 <a href="../subscribe/subscribe.php/#faq-section">FAQ</a>
@@ -38,16 +38,16 @@
                         <h5 class="footer-content-heading">Our Policy</h5>
                         <ul>
                             <li>
-                                <a href="disclaimer.php"">Disclaimer</a>
+                                <a href="../pages/disclaimer.php">Disclaimer</a>
                             </li>
                             <li>
-                                <a href="privacy-policy.php">Privacy Policy</a>
+                                <a href="../pages/privacy-policy.php">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="subscriber-agreement.php">Subscriber's Agreement</a>
+                                <a href="../pages/subscriber-agreement.php">Subscriber's Agreement</a>
                             </li>
                             <li>
-                                <a href="terms-of-use.php">Terms of Use</a>
+                                <a href="../pages/terms-of-use.php">Terms of Use</a>
                             </li>
                         </ul>
                     </div>

@@ -11,7 +11,7 @@ $gst = ($itemPrice * (18 / 100));
         <div class="row" id="order-summary">
             <div class="col-12">
                 <h5 class="payment-heading">ORDER SUMMARY</h5>
-                <table class="table table-striped">
+                <table class="table table-striped table-responsive-sm">
                     <thead>
                         <tr>
                             <th>S.No.</th>
@@ -34,7 +34,7 @@ $gst = ($itemPrice * (18 / 100));
             </div>
             <div class="col-12">
                 <h5 class="payment-heading">SUBSCRIBER DETAIL</h5>
-                <form action="payind.php" method='POST' class="needs-validation" novalidate>
+                <form action="demoind.php" method='POST' class="needs-validation" novalidate>
                     <!-- Item Name -->
                     <input type="hidden" name="pName" value="<?php echo $itemName ?>">
                     <!-- Total Price Value (Price + GST Price) -->

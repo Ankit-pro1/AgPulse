@@ -259,7 +259,7 @@ include_once 'header.php';
                         <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Create Password" required>
                     </div>
                     <!-- Input field for userArrive  -->
-                        <input type="text" name="userArrive" id="userArrive" hidden value="Hero">
+                    <input type="text" name="userArrive" id="userArrive" hidden value="Hero">
                     <div class="col text-center mt-2">
                         <button type="submit" class="btn btn-success">TRY FOR FREE</button>
                     </div>
@@ -290,7 +290,7 @@ include_once 'header.php';
                                 <li>Yellow Peas</li>
                                 <li>Desi Chickpeas</li>
                                 <li>Kabuli Chickpeas</li>
-                                <li>Lentils</li>                                
+                                <li>Lentils</li>
                             </div>
                         </div>
                     </div>
@@ -614,7 +614,7 @@ include_once 'header.php';
                                     <div class="form-group">
                                         <input type="password" name="userPass" id="userPass" class="form-control" placeholder="Create Password" required>
                                     </div>
-                                    <!-- Input field for userArrive  -->
+                                    <!---- Input field for userArrive  ---->
                                     <input type="text" name="userArrive" id="userArrive" hidden value="Free Trial">
                                     <div class="text-center mt-3 form-group">
                                         <button type="submit" class="btn btn-success form-control">TRY FOR FREE</button>
@@ -622,7 +622,7 @@ include_once 'header.php';
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
                             </div>
                         </div>
 
@@ -647,147 +647,148 @@ include_once 'header.php';
         <div class="row">
             <!---------- Pulses Blogs ---------->
             <div class="col-lg-6">
-                <h2 class="text-center">Pulses</h2>
+                <h2 class="text-center blog-heading">Pulses</h2>
                 <div class="row mb-3">
                     <?php
-                            include_once "config.php";
-                            $sql = "SELECT * FROM blogs
+                    include_once "config.php";
+                    $sql = "SELECT * FROM blogs
                             LEFT JOIN category ON blogs.blogCategory = category.cId
                             WHERE cName = 'Pulse' ORDER BY blogId DESC limit 2 ";
-                            // die($sql);
-                            $result = mysqli_query($conn, $sql) or mysqli_error($conn);
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
+                    // die($sql);
+                    $result = mysqli_query($conn, $sql) or mysqli_error($conn);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span><?php echo $row['blogDate']?></span>
-                                </span>
-                            </div>
-                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog1">continue reading</button></p>
+                            <div class="col-md-6">
+                                <div class="blog-content">
+                                    <h3 class="blog-heading"><?php echo $row['blogTitle'] ?></h3>
+                                    <div class="blog-information">
+                                        <span>
+                                            <i class="far fa-user"></i>
+                                            <span>Admin</span>
+                                        </span>
+                                        <span>
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span><?php echo $row['blogDate'] ?></span>
+                                        </span>
+                                    </div>
+                                    <p class="blogDesc"><?php echo substr($row['blogDesc'], 0, 150) . "..."; ?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="<?php echo '#p'.$row['blogId'] ?>">continue reading</button></p>
 
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog1" class="modal" role="dialog">
-                                <div class="modal-dialog">
+                                    <!-- More Blog Modal Pop Up -->
+                                    <div id="<?php echo 'p'.$row['blogId'] ?>" class="modal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
 
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span><?php echo $row['blogDate']?></span>
-                                                </span>
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"><?php echo $row['blogTitle'] ?></h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="blog-information">
+                                                        <span>
+                                                            <i class="far fa-user"></i>
+                                                            <span>Admin</span>
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-calendar-alt"></i>
+                                                            <span><?php echo $row['blogDate'] ?></span>
+                                                        </span>
+                                                    </div>
+                                                    <p>
+                                                        <?php echo $row['blogDesc'] ?>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+                                                </div>
                                             </div>
-                                            <p>
-                                                <?php echo $row['blogDesc']?>
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <?php 
+                    <?php
+                        }
+                    } else {
+                        echo "<p>Blogs no found</p>";
                     }
-                }else{
-                    echo"<p>Blogs no found</p>";
-                }
-                ?>
+                    ?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
-                    <a href="./blog/blog.php?bName=Pulses" class="btn btn-default btn-success">Read more</a>
+                    <a href="./blog/blog.php?bName=Pulse" class="btn btn-default btn-success">Read more</a>
+                    <!--  -->
                 </div>
             </div>
 
             <!-------------- Wheat Blogs ---------------->
             <div class="col-lg-6">
-                <h2 class="text-center">Wheat</h2>
+                <h2 class="text-center blog-heading">Wheat</h2>
                 <div class="row mb-3">
                     <?php
-                            include_once "config.php";
-                            $sql = "SELECT * FROM blogs
+                    include_once "config.php";
+                    $sql = "SELECT * FROM blogs
                             LEFT JOIN category ON blogs.blogCategory = category.cId
                             WHERE cName = 'Wheat' ORDER BY blogId DESC limit 2";
-                            // die($sql);
-                            $result = mysqli_query($conn, $sql) or die("Query Failed");
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
+                    // die($sql);
+                    $result = mysqli_query($conn, $sql) or die("Query Failed");
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span><?php echo $row['blogDate']?></span>
-                                </span>
-                            </div>
-                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog3">continue reading</button></p>
+                            <div class="col-md-6">
+                                <div class="blog-content">
+                                    <h3 class="blog-heading"><?php echo $row['blogTitle'] ?></h3>
+                                    <div class="blog-information">
+                                        <span>
+                                            <i class="far fa-user"></i>
+                                            <span>Admin</span>
+                                        </span>
+                                        <span>
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span><?php echo $row['blogDate'] ?></span>
+                                        </span>
+                                    </div>
+                                    <p><?php echo substr($row['blogDesc'], 0, 150) . "..."; ?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="<?php echo '#w'.$row['blogId'] ?>">continue reading</button></p>
 
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog3" class="modal" role="dialog">
-                                <div class="modal-dialog">
+                                    <!-- More Blog Modal Pop Up -->
+                                    <div id="<?php echo 'w'.$row['blogId'] ?>" class="modal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
 
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span><?php echo $row['blogDate']?></span>
-                                                </span>
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"><?php echo $row['blogTitle'] ?></h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="blog-information">
+                                                        <span>
+                                                            <i class="far fa-user"></i>
+                                                            <span>Admin</span>
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-calendar-alt"></i>
+                                                            <span><?php echo $row['blogDate'] ?></span>
+                                                        </span>
+                                                    </div>
+                                                    <p>
+                                                        <?php echo $row['blogDesc'] ?>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+                                                </div>
                                             </div>
-                                            <p>
-                                                <?php echo $row['blogDesc']?>
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <?php 
-                    }
-                 }else{
-                    echo"<p>Blogs no found</p>";
-                 } ; ?>
+                    <?php
+                        }
+                    } else {
+                        echo "<p>Blogs no found</p>";
+                    }; ?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
                     <a href="./blog/blog.php?bName=Wheat" class="btn btn-default btn-success">Read more</a>
@@ -799,70 +800,70 @@ include_once 'header.php';
         <div class="row">
             <!--------- Corn Blogs ------------>
             <div class="col-lg-6">
-                <h2 class="text-center">Corn</h2>
+                <h2 class="text-center blog-heading">Corn</h2>
                 <div class="row  mb-3">
                     <?php
-                            include_once "config.php";
-                            $sql = "SELECT * FROM blogs
+                    include_once "config.php";
+                    $sql = "SELECT * FROM blogs
                             LEFT JOIN category ON blogs.blogCategory = category.cId
                             WHERE cName = 'Corn' ORDER BY blogId DESC limit 2";
-                            // die($sql);
-                            $result = mysqli_query($conn, $sql) or die("Query Failed");
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
+                    // die($sql);
+                    $result = mysqli_query($conn, $sql) or die("Query Failed");
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span><?php echo $row['blogDate']?></span>
-                                </span>
-                            </div>
-                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog5">continue reading</button></p>
+                            <div class="col-md-6">
+                                <div class="blog-content">
+                                    <h3 class="blog-heading"><?php echo $row['blogTitle'] ?></h3>
+                                    <div class="blog-information">
+                                        <span>
+                                            <i class="far fa-user"></i>
+                                            <span>Admin</span>
+                                        </span>
+                                        <span>
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span><?php echo $row['blogDate'] ?></span>
+                                        </span>
+                                    </div>
+                                    <p><?php echo substr($row['blogDesc'], 0, 150) . "..."; ?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target=""<?php echo '#c'.$row['blogId'] ?>"">continue reading</button></p>
 
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog5" class="modal" role="dialog">
-                                <div class="modal-dialog">
+                                    <!-- More Blog Modal Pop Up -->
+                                    <div id=""<?php echo 'c'.$row['blogId'] ?>"" class="modal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
 
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span><?php echo $row['blogDate']?></span>
-                                                </span>
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"><?php echo $row['blogTitle'] ?></h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="blog-information">
+                                                        <span>
+                                                            <i class="far fa-user"></i>
+                                                            <span>Admin</span>
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-calendar-alt"></i>
+                                                            <span><?php echo $row['blogDate'] ?></span>
+                                                        </span>
+                                                    </div>
+                                                    <p>
+                                                        <?php echo $row['blogDesc']; ?>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+                                                </div>
                                             </div>
-                                            <p>
-                                                <?php echo $row['blogDesc'];?>
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <?php 
-                    }
-                 }?>
+                    <?php
+                        }
+                    } ?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
                     <a href="./blog/blog.php?bName=Corn" class="btn btn-default btn-success">Read more</a>
@@ -870,70 +871,70 @@ include_once 'header.php';
             </div>
             <!--------- Oilseeds Blogs ----------->
             <div class="col-lg-6">
-                <h2 class="text-center">Oilseeds</h2>
+                <h2 class="text-center blog-heading">Oilseeds</h2>
                 <div class="row  mb-3">
-                <?php
-                            include_once "config.php";
-                            $sql = "SELECT * FROM blogs
+                    <?php
+                    include_once "config.php";
+                    $sql = "SELECT * FROM blogs
                             LEFT JOIN category ON blogs.blogCategory = category.cId
                             WHERE cName = 'Oilseeds' ORDER BY blogId DESC limit 2";
-                            // die($sql);
-                            $result = mysqli_query($conn, $sql) or die("Query Failed");
-                            if(mysqli_num_rows($result) > 0){
-                                while($row = mysqli_fetch_assoc($result)){
+                    // die($sql);
+                    $result = mysqli_query($conn, $sql) or die("Query Failed");
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <div class="col-md-6">
-                        <div class="blog-content">
-                            <h3 class="blog-heading"><?php echo $row['blogTitle']?></h3>
-                            <div class="blog-information">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    <span>Admin</span>
-                                </span>
-                                <span>
-                                    <i class="far fa-calendar-alt"></i>
-                                    <span><?php echo $row['blogDate']?></span>
-                                </span>
-                            </div>
-                            <p><?php echo substr($row['blogDesc'],0,150)."...";?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="#moreBlog7">continue reading</button></p>
+                            <div class="col-md-6">
+                                <div class="blog-content">
+                                    <h3 class="blog-heading"><?php echo $row['blogTitle'] ?></h3>
+                                    <div class="blog-information">
+                                        <span>
+                                            <i class="far fa-user"></i>
+                                            <span>Admin</span>
+                                        </span>
+                                        <span>
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span><?php echo $row['blogDate'] ?></span>
+                                        </span>
+                                    </div>
+                                    <p><?php echo substr($row['blogDesc'], 0, 150) . "..."; ?><button class="blog-btn btn-dark btn" data-toggle="modal" data-target="<?php echo '#o'.$row['blogId'] ?>">continue reading</button></p>
 
-                            <!-- More Blog Modal Pop Up -->
-                            <div id="moreBlog7" class="modal" role="dialog">
-                                <div class="modal-dialog">
+                                    <!-- More Blog Modal Pop Up -->
+                                    <div id="<?php echo 'o'.$row['blogId'] ?>" class="modal" role="dialog">
+                                        <div class="modal-dialog modal-lg">
 
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title"><?php echo $row['blogTitle']?></h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="blog-information">
-                                                <span>
-                                                    <i class="far fa-user"></i>
-                                                    <span>Admin</span>
-                                                </span>
-                                                <span>
-                                                    <i class="far fa-calendar-alt"></i>
-                                                    <span><?php echo $row['blogDate'];?></span>
-                                                </span>
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"><?php echo $row['blogTitle'] ?></h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="blog-information">
+                                                        <span>
+                                                            <i class="far fa-user"></i>
+                                                            <span>Admin</span>
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-calendar-alt"></i>
+                                                            <span><?php echo $row['blogDate']; ?></span>
+                                                        </span>
+                                                    </div>
+                                                    <p>
+                                                        <?php echo $row['blogDesc']; ?>
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+                                                </div>
                                             </div>
-                                            <p>
-                                                <?php echo $row['blogDesc'];?>
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default btn-dark" data-dismiss="modal">Close</button>
+
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                   <?php 
-                   }
-                 }; ?>
+                    <?php
+                        }
+                    }; ?>
                 </div>
                 <div class="row justify-content-center more-blog-btn">
                     <a href="./blog/blog.php?bName=Oilseeds" class="btn btn-default btn-success">Read more</a>
@@ -1038,7 +1039,7 @@ include_once 'header.php';
                         </ul>
                         <div class="row justify-content-center subscribe-btn">
                             <button class="btn btn-success" data-toggle="modal" data-target="#gitPop">Get in touch</button>
-                            
+
                             <!-- Modal Pop up for Get in touch -->
                             <div id="gitPop" class="modal" role="dialog">
                                 <div class="modal-dialog">
@@ -1055,7 +1056,7 @@ include_once 'header.php';
                                                     <input type="text" name="gName" id="gName" placeholder="Full name" class="form-control" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" name="gCompany" id="gCname" placeholder="Company Name" class="form-control" required >
+                                                    <input type="text" name="gCompany" id="gCname" placeholder="Company Name" class="form-control" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="email" name="gEmail" id="gEmail" placeholder="Corporate Email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
@@ -1130,6 +1131,11 @@ include_once 'header.php';
 <?php
 include_once "footer.php";
 ?>
+<style>
+    .blog-content p > table{
+        overflow-x: scroll;
+    }
+</style>
 <!------------------XX--------------------- Footer include file ------------XX--------------->
 
 <script>
@@ -1143,29 +1149,22 @@ include_once "footer.php";
         columns: 1,
         placeholder: 'Select Product'
     });
-    $('#langOpt3').multiselect({
-        columns: 1,
-        placeholder: 'Select Product'
-    });
-
-
-      // Form Validation
-        // Disable form submissions if there are invalid fields
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Get the forms we want to add validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
+    // Disable form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 </script>

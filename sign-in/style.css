@@ -14,3 +14,6 @@ body{
     background-color: var(--white);
     padding: 1.5rem;
 }
+#wrapper-user .imp-links{
+    font-size: 14px;
+}

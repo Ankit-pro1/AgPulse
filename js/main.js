@@ -1,17 +1,3 @@
-
-// Sign-in and sign-up modal pop up
-(()=>{
-    let signinModal = document.querySelector("#signinModal"),
-    signupModalBtn = document.querySelector("#signupModalBtn"),
-    closeBtn = document.querySelector("#signupModal .close");
-    signupModalBtn.addEventListener('click',()=>{
-        signinModal.style.display = 'none';
-    })
-    closeBtn.addEventListener('click',()=>{
-        location.reload();
-    })
-})();
-
 // Coverage Section 
 (()=>{
     let toggleBtn = document.getElementsByClassName('item')
